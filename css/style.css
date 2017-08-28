@@ -1,1 +1,70 @@
+/**
+ * @Author: Mohammed Ismail <ikismail7>
+ * @Date:   2017-08-28T13:54:29+05:30
+ * @Email:  ikismail7@gmail.com
+ * @Last modified by:   ikismail7
+ * @Last modified time: 2017-08-28T19:14:02+05:30
+ */
+
+
+
 /* YOUR CUSTOM STYLES */
+
+/* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+   .row.content {height: 1000px}
+
+   /* Set gray background color and 100% height */
+   .sidenav {
+     background-color: #f1f1f1;
+     height: 100%;
+   }
+
+   /* Set black background color, white text and some padding */
+   footer {
+     background-color: #243a51;
+     color: white;
+     padding: 10px;
+   }
+
+   /* On small screens, set height to 'auto' for sidenav and grid */
+   @media screen and (max-width: 767px) {
+     .sidenav {
+       height: auto;
+       padding: 15px;
+     }
+     .row.content {height: auto;}
+   }
+
+a {
+  color:#243a51;
+}
+
+
+.navbar{
+  color: #fff
+}
+.navbar .navbar-brand{
+  color: #fff;
+}
+
+.navbar .nav li a{
+  color: #fff;
+}
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover{
+  background-color: #fff;
+  color: #333;
+}
+
+.backBlueColor{
+  background : #243a51;
+}
+
+/*Side Nav*/
+.nav > li > a:focus, .nav > li > a:hover{
+  background-color:#243a51;
+  color: #fff;
+}
+.mr-3{
+  margin-right: 3mm;
+  font-size: 20px;
+}
