@@ -1,31 +1,56 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>TechAjis-News</title>
+<html ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>TechAjis-News</title>
+  <!-- StyleSheets -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Material Design css -->
+    <link rel="stylesheet" type="text/css" href="css/mdb.min.css">
+    <!--  custom styles -->
+    <link href="css/style.css" rel="stylesheet">
+  <!-- /StyleSheets -->
+</head>
 
-    <!-- StyleSheets -->
-      <!-- Font Awesome -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-      <!-- Bootstrap css -->
-      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-      <!-- Material Design css -->
-      <link rel="stylesheet" type="text/css" href="css/mdb.min.css">
-      <!--  custom styles -->
-      <link href="css/style.css" rel="stylesheet">
-    <!-- /StyleSheets -->
-  </head>
-  <body>
+<body ng-controller="newsController">
 
-    Hello World
+  <nav class="navbar navbar-default backBlueColor">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">TechAjis-News</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#">Home</a></li>
+    </ul>
+  </div>
+</nav>
 
-    <!-- Scripts -->
-      <script src="js/jquery-3.1.1.min.js" charset="utf-8"></script>
-      <script src="js/tether.min.js" charset="utf-8"></script>
-      <script src="js/bootstrap.min.js" charset="utf-8"></script>
-      <script src="js/mdb.min.js" charset="utf-8"></script>
-    <!-- /Scripts -->
-  </body>
+<div ng-include="'view/sidenav.html'"></div>
+
+
+<footer class="container-fluid">
+  <p>Footer Text</p>
+</footer>
+
+  <!-- Scripts -->
+    <script src="js/jquery-3.1.1.min.js" charset="utf-8"></script>
+    <script src="js/tether.min.js" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js" charset="utf-8"></script>
+    <script src="js/mdb.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+
+  <!-- /Scripts -->
+
+  <!-- AngularScripts -->
+    <script src="scripts/app.js" charset="utf-8"></script>
+    <script src="scripts/appController.js" charset="utf-8"></script>
+    <script src="scripts/appService.js" charset="utf-8"></script>
+  <!-- /AngularScripts -->
+</body>
 </html>
