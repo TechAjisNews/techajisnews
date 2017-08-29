@@ -6,49 +6,56 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>TechAjis-News</title>
   <!-- StyleSheets -->
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-    <!-- Bootstrap css -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- Material Design css -->
-    <link rel="stylesheet" type="text/css" href="css/mdb.min.css">
-    <!--  custom styles -->
-    <link href="css/style.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+  <!-- Bootstrap css -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Material Design css -->
+  <link rel="stylesheet" type="text/css" href="css/mdb.min.css">
+  <link rel='stylesheet' href="http://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css" type='text/css' media='all' />    <!--  custom styles -->
+  <link href="css/style.css" rel="stylesheet">
   <!-- /StyleSheets -->
 </head>
 
 <body ng-controller="newsController">
 
-  <nav class="navbar navbar-default backBlueColor">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#!home">TechAjis-News</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="#!home">Home</a></li>
-    </ul>
-  </div>
-</nav>
+<!-- Loading-Bar -->
+  <div id="loading-bar-container"></div>
 
-<div ng-include="'view/sidenav.html'"></div>
+<!-- Navigation bar -->
+  <nav class="navbar navbar-default backBlueColor">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#!home">TechAjis-News</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="#!home">Home</a></li>
+      </ul>
+    </div>
+  </nav>
+<!-- /Navigation Bar -->
+
+
+  <div ng-include="'view/sidenav.html'"></div>
 
 
 
 
   <!-- Scripts -->
-    <script src="js/jquery-3.1.1.min.js" charset="utf-8"></script>
-    <script src="js/tether.min.js" charset="utf-8"></script>
-    <script src="js/bootstrap.min.js" charset="utf-8"></script>
-    <script src="js/mdb.min.js" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js" charset="utf-8"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+  <script src="js/jquery-3.1.1.min.js" charset="utf-8"></script>
+  <script src="js/tether.min.js" charset="utf-8"></script>
+  <script src="js/bootstrap.min.js" charset="utf-8"></script>
+  <script src="js/mdb.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js" charset="utf-8"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js" charset="utf-8"></script>
 
   <!-- /Scripts -->
 
   <!-- AngularScripts -->
-    <script src="scripts/app.js" charset="utf-8"></script>
-    <script src="scripts/appController.js" charset="utf-8"></script>
-    <script src="scripts/appService.js" charset="utf-8"></script>
+  <script src="scripts/app.js" charset="utf-8"></script>
+  <script src="scripts/appController.js" charset="utf-8"></script>
+  <script src="scripts/appService.js" charset="utf-8"></script>
   <!-- /AngularScripts -->
 
 </body>
