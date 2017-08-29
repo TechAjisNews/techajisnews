@@ -3,20 +3,24 @@
  * @Date:   2017-08-28T13:54:29+05:30
  * @Email:  ikismail7@gmail.com
  * @Last modified by:   ikismail7
- * @Last modified time: 2017-08-28T19:14:02+05:30
+ * @Last modified time: 2017-08-29T12:04:38+05:30
  */
 
 
 
 /* YOUR CUSTOM STYLES */
+:root {
+  --sidenav-height: 775px;
+}
+
 
 /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
-   .row.content {height: 1000px}
+   .row.content {height: var(--sidenav-height)}
 
    /* Set gray background color and 100% height */
    .sidenav {
      background-color: #f1f1f1;
-     height: 100%;
+     height: var(--sidenav-height);
    }
 
    /* Set black background color, white text and some padding */
@@ -67,4 +71,27 @@ a {
 .mr-3{
   margin-right: 3mm;
   font-size: 20px;
+}
+
+.brand-img{
+  height: 50px;
+  width: 50px;
+  float: left;
+  margin-right: 10px;
+}
+
+.bq-even {
+    border-left: 3px solid #c6214a;
+}
+
+.bq-even .bq-title{
+  color: #243a51  ;
+}
+
+.bq-odd {
+    border-left: 3px solid #C800BF;
+}
+
+.bq-odd .bq-title{
+  color: #243a51  ;
 }
