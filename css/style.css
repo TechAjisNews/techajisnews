@@ -3,7 +3,7 @@
  * @Date:   2017-08-28T13:54:29+05:30
  * @Email:  ikismail7@gmail.com
  * @Last modified by:   ikismail7
- * @Last modified time: 2017-08-29T19:54:30+05:30
+ * @Last modified time: 2017-08-29T20:42:01+05:30
  */
 
 
@@ -77,6 +77,17 @@ a {
   font-size: 20px;
 }
 
+.sidenav .btn{
+  border-radius: 50px;
+  padding: 0.500rem 4.13rem;
+}
+
+.btn-outline-primary:active, .btn-outline-primary:active:focus, .btn-outline-primary:focus, .btn-outline-primary:hover {
+    color: #4285F4;
+    border-color: #243A51;
+    background-color: transparent;
+}
+
 .brand-img{
   height: 50px;
   width: 50px;
@@ -139,13 +150,13 @@ ul.breadcrumb li a:hover {
 /*Loading-bar*/
 #loading-bar .bar {
   position: relative;
-  background: firebrick;
+  background: #4285F4;
 }
 #loading-bar-spinner .spinner-icon {
 width: 0px;
 height: 0px;
 border: solid 4px transparent;
-border-top-color: firebrick;
-border-left-color: firebrick;
+border-top-color: #4285F4;
+border-left-color: #4285F4;
 border-radius: 10px;
 }
