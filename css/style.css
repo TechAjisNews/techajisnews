@@ -3,7 +3,7 @@
  * @Date:   2017-08-28T13:54:29+05:30
  * @Email:  ikismail7@gmail.com
  * @Last modified by:   ikismail7
- * @Last modified time: 2017-08-29T12:08:17+05:30
+ * @Last modified time: 2017-08-29T15:45:49+05:30
  */
 
 
@@ -15,7 +15,9 @@
 
 
 /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
-   .row.content {height: var(--sidenav-height)}
+   .row.content {
+     height: var(--sidenav-height)
+   }
 
    /* Set gray background color and 100% height */
    .sidenav {
@@ -96,4 +98,7 @@ a {
 
 .bq-odd .bq-title{
   color: #243a51  ;
+}
+.img-thumbnail{
+  padding: 0;
 }
