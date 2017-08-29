@@ -3,14 +3,14 @@
  * @Date:   2017-08-28T13:54:29+05:30
  * @Email:  ikismail7@gmail.com
  * @Last modified by:   ikismail7
- * @Last modified time: 2017-08-29T15:45:49+05:30
+ * @Last modified time: 2017-08-29T19:54:30+05:30
  */
 
 
 
 /* YOUR CUSTOM STYLES */
 :root {
-  --sidenav-height: 775px;
+  --sidenav-height: 900px;
 }
 
 
@@ -101,4 +101,51 @@ a {
 }
 .img-thumbnail{
   padding: 0;
+}
+
+/*BreadCrumbs*/
+/* Style the list */
+ul.breadcrumb {
+   padding: 10px 16px;
+   list-style: none;
+   background-color: #eee;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+   display: inline;
+   font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+   padding: 8px;
+   color: black;
+   content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+   color: #0275d8;
+   text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+   color: #01447e;
+   text-decoration: underline;
+}
+
+/*Loading-bar*/
+#loading-bar .bar {
+  position: relative;
+  background: firebrick;
+}
+#loading-bar-spinner .spinner-icon {
+width: 0px;
+height: 0px;
+border: solid 4px transparent;
+border-top-color: firebrick;
+border-left-color: firebrick;
+border-radius: 10px;
 }
