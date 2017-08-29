@@ -1,0 +1,59 @@
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-9" style="float:left;">
+
+      <a ng-href="{{data.url}}" target="_blank" ng-repeat="data in sourceData">
+        <!-- <a href="#"> -->
+        <blockquote class="blockquote bq-even hoverable" ng-if="$odd">
+            <img class="brand-img" ng-src="https://icons.better-idea.org/icon?url={{data.url}}&size=32..50..120" alt="">
+            <p class="bq-title">{{data.name}}</p>
+            <p>{{data.description}}</p>
+        </blockquote>
+
+        <blockquote class="blockquote bq-odd hoverable" ng-if="$even">
+            <img class="brand-img" ng-src="https://icons.better-idea.org/icon?url={{data.url}}&size=32..50..120" alt="">
+            <p class="bq-title">{{data.name}}</p>
+            <p>{{data.description}}</p>
+        </blockquote>
+      </a>
+
+    </div>
+    </div>
+  </div>
+<footer class="footer">
+
+    <!--Footer Links-->
+    <div class="container-fluid">
+        <div class="row">
+
+            <!--First column-->
+            <div class="col-md-6">
+                <h5 class="title">TechAjis-News</h5>
+                <p>Get all news from around the world based on category.</p>
+            </div>
+            <!--/.First column-->
+
+            <!--Second column-->
+            <div class="col-md-6">
+                <h5 class="title">Useful Links</h5>
+                <ul >
+                    <li><a href="#!" class="heading">Home</a></li>
+                    <li><a href="#!" class="heading">Contact Us</a></li>
+                </ul>
+            </div>
+            <!--/.Second column-->
+        </div>
+    </div>
+    <!--/.Footer Links-->
+
+    <!--Copyright-->
+    <div class="footer-copyright">
+        <div class="container-fluid">
+            © 2017 Copyright: <a href="#!"> techajisnews.com </a>
+
+        </div>
+    </div>
+    <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->
