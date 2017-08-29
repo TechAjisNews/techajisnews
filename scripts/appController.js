@@ -21,5 +21,13 @@ app.controller('newsController', ['$scope','appService',function(
         // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
       })
     };
-
+     $scope.getNewsByLanguage = function(language){
+      console.log('language ->',language);
+      appService.getNewsByLanguage(language).then(function(data){
+        $scope.sourceData = data;
+        console.log($scope.sourceData)
+      },function(error){
+        // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
+      })
+    };
   }])
