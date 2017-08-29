@@ -2,16 +2,14 @@
 * @Author: Mohammed Ismail <ikismail7>
 * @Date:   2017-08-28T16:31:35+05:30
  * @Last modified by:   ikismail7
- * @Last modified time: 2017-08-29T20:11:25+05:30
+ * @Last modified time: 2017-08-29T20:25:32+05:30
 */
 app.controller('newsController', ['$scope','appService',function(
   $scope,appService) {
 
     $scope.category;
-
     $scope.sourceData = [];
     $scope.image ;
-
 
     $scope.getNewsBySource = function(category){
       $scope.category = category;
