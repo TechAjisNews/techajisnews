@@ -1,12 +1,12 @@
-
 <div class="container-fluid">
   <div class="row content">
+    <br><br><br>
     <div class="col-sm-3 sidenav">
       <h4><u>Browse by Category</u></h4>
       <ul class="nav nav-pills nav-stacked">
         <li>
           <a href="#!category" ng-click="getNewsBySource('general')">
-            <i class="fa fa-globe mr-3" aria-hidden="true"></i>General</a>
+            <i class="fa fa-globe mr-3" ng-init="getNewsBySource('general')" aria-hidden="true"></i>General</a>
             <a href="#!category" ng-click="getNewsBySource('business')">
               <i class="fa fa-briefcase mr-3" aria-hidden="true"></i>
               Business</a>
@@ -116,7 +116,45 @@
 
 
               <!-- Singlepage Application View-->
-              <div ng-view></div>
+              <div ng-view style="float:left;" ></div>
 
             </div>
           </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<footer class="footer" >
+
+  <!--Footer Links-->
+  <div class="container-fluid">
+    <div class="row">
+
+      <!--First column-->
+      <div class="col-md-6">
+        <h5 class="title">TechAjis-News</h5>
+        <p>Get all news from around the world based on category.</p>
+      </div>
+      <!--/.First column-->
+
+      <!--Second column-->
+      <div class="col-md-6">
+        <h5 class="title">Useful Links</h5>
+        <ul>
+          <li><a href="#!" class="heading">Home</a></li>
+          <li><a href="#!" class="heading">Contact Us</a></li>
+        </ul>
+      </div>
+      <!--/.Second column-->
+    </div>
+  </div>
+  <!--/.Footer Links-->
+
+  <!--Copyright-->
+  <div class="footer-copyright">
+    <div class="container-fluid">
+      © 2017 Copyright: <a href="#!"> techajisnews.com </a>
+
+    </div>
+  </div>
+  <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->
