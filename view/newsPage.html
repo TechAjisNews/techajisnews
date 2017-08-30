@@ -1,10 +1,12 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-9" style="float:right;">
-      <ul class="breadcrumb">
+    <div class="col-sm-9" style="float:right;margin-left: 130px;">
+
+      <ul class="breadcrumb" ng-if="category">
         <li><a href="#!home">News</a></li>
         <li>{{category}}</li>
       </ul>
+
       <div class="" ng-repeat="data in sourceData">
 
         <!-- <a href="#"> -->
@@ -31,4 +33,3 @@
     </div>
   </div>
 </div>
-

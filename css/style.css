@@ -3,36 +3,40 @@
  * @Date:   2017-08-28T13:54:29+05:30
  * @Email:  ikismail7@gmail.com
  * @Last modified by:   ikismail7
- * @Last modified time: 2017-08-29T20:42:01+05:30
+ * @Last modified time: 2017-08-30T14:39:29+05:30
  */
 
 
 
 /* YOUR CUSTOM STYLES */
 :root {
-  --sidenav-height: 900px;
+  --sidenav-height: 1200px;
 }
 
 
 /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
    .row.content {
-     height: var(--sidenav-height)
+     height: 1200px
    }
 
    /* Set gray background color and 100% height */
    .sidenav {
      background-color: #f1f1f1;
-     height: var(--sidenav-height);
-    position: fixed;
+     height: 1200px;
+     position: fixed;
    }
 
    /* Set black background color, white text and some padding */
    footer {
+     bottom: 0;
      background-color: #243a51;
+     position: relative;
      color: white;
+     height: auto;
+     left: 0;
      padding: 10px;
      width: 100%;
-     
+
    }
 .heading{
   color: white;
@@ -123,14 +127,14 @@ ul.breadcrumb {
    padding: 10px 16px;
    list-style: none;
    background-color: #eee;
-   
+
 }
 
 /* Display list items side by side */
 ul.breadcrumb li {
    display: inline;
    font-size: 18px;
-   
+
 }
 
 /* Add a slash symbol (/) before/behind each list item */
