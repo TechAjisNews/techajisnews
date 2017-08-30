@@ -1,5 +1,5 @@
 <ul class="breadcrumb" style="float:left;">
- <li><a href="#!home">Home</a></li>
+ <li><a href="#!home">News</a></li>
  <li>{{category}}</li>
 </ul>
 
@@ -11,18 +11,18 @@
 
         <!-- <a href="#"> -->
         <blockquote class="blockquote bq-even hoverable" ng-if="$odd">
-          <a ng-href="{{data.url}}" >
+          <a ng-href="{{data.url}}" target="_blank">
             <img class="brand-img" ng-src="https://icons.better-idea.org/icon?url={{data.url}}&size=32..50..120" alt="">
           </a>
-          <a ng-href="{{data.url}}" ><p class="bq-title">{{data.name}}</p></a>
+          <a ng-href="{{data.url}}" target="_blank"><p class="bq-title">{{data.name}}</p></a>
           <p>{{data.description}}</p>
         </blockquote>
 
         <blockquote class="blockquote bq-odd hoverable" ng-if="$even">
-          <a ng-href="{{data.url}}" >
+          <a ng-href="{{data.url}}" target="_blank">
             <img class="brand-img" ng-src="https://icons.better-idea.org/icon?url={{data.url}}&size=32..50..120" alt="">
           </a>
-          <a ng-href="{{data.url}}" ><p class="bq-title">{{data.name}}</p></a>
+          <a ng-href="{{data.url}}" target="_blank"><p class="bq-title">{{data.name}}</p></a>
           <p>{{data.description}}</p>
         </blockquote>
       </div>

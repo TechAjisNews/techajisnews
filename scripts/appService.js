@@ -2,7 +2,7 @@
 * @Author: Mohammed Ismail <ikismail7>
 * @Date:   2017-08-28T19:00:36+05:30
  * @Last modified by:   ikismail7
- * @Last modified time: 2017-08-29T20:24:36+05:30
+ * @Last modified time: 2017-08-30T10:40:31+05:30
 */
 app.factory('appService',['$http', function($http){
   var appService = this;
@@ -19,13 +19,36 @@ app.factory('appService',['$http', function($http){
       console.log('Error While fetching Data in service')
     })
   };
-   appService.getNewsByLanguage = function(language){
+  appService.getNewsByLanguage = function(language){
     console.log('language ->',language);
-    return $http.get(GET__URL + language).then(function(response){
+    return $http.get(GET_LANGUAGE_URL + language).then(function(response){
       return response.data.sources;
     },function(errorResponse){
       console.log('Error While fetching Data in service')
     })
   };
-    return appService;
-  }])
+
+  // appService.getNews7RSS = function () {
+  //   console.log('entering loggedUser in Service');
+  //   var NEWS7RSS = "http://feeds.feedburner.com/ns7/latestnews";
+  //   return $http(
+  //     {
+  //       method: 'GET',
+  //       xhrFields: {
+  //         withCredentials: true
+  //       },
+  //       url: NEWS7RSS,
+  //       data: {},
+  //       headers: {}
+  //     })
+  //     .success(
+  //       function (data, status) {
+  //         console.log('status : '
+  //         status);
+  //         return data;
+  //       });
+  //     };
+
+
+      return appService;
+    }])
