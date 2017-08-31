@@ -3,7 +3,7 @@
  * @Author: Mohammed Ismail
  * @Date:   2017-08-30T16:05:45+05:30
  * @Last modified by:   Mohammed Ismail
- * @Last modified time: 2017-08-31T11:24:29+05:30
+ * @Last modified time: 2017-08-31T15:14:56+05:30
  */
  var app = angular.module('myApp', ["ngRoute","angular-loading-bar"]);
  app.config(function($routeProvider) {
@@ -12,7 +12,7 @@
      templateUrl : "view/category.html"
    })
    .when("/home", {
-     templateUrl : "view/category.html"
+     templateUrl : "view/mainPage.html"
    })
    .when("/category", {
      templateUrl : "view/category.html"
