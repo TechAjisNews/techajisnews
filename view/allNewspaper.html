@@ -1,0 +1,17 @@
+<div class="line">
+  <div class="margin">
+    <div class="s-12 l-five" ng-repeat="data in sources">
+      <div class="box-dark mt-2 ">
+        <div class="">
+          <a ng-href="{{data.url}}" target="_blank">
+            <div class="hm-zoom">
+              <img class="brand-img" ng-src="https://icons.better-idea.org/icon?url={{data.url}}&size=70..120..200"
+              alt="..." >
+            </div>
+            <h6 class="channel-name"><strong>{{data.name}}</strong></h6>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
