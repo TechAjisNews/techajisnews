@@ -2,7 +2,7 @@
 * @Author: Mohammed Ismail
 * @Date:   2017-08-30T15:59:02+05:30
  * @Last modified by:   Mohammed Ismail
- * @Last modified time: 2017-08-31T12:15:54+05:30
+ * @Last modified time: 2017-08-31T12:23:55+05:30
 */
 
 
@@ -24,6 +24,11 @@ h1 {
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
+
+.aside-nav{
+    padding: 10px;
+}
+
 .aside-nav ul {
   background: none repeat scroll 0 0 #252D30;
 }
