@@ -2,11 +2,7 @@
 * @Author: Mohammed Ismail
 * @Date:   2017-08-30T15:59:02+05:30
  * @Last modified by:   Mohammed Ismail
-<<<<<<< HEAD
- * @Last modified time: 2017-08-31T12:15:54+05:30
-=======
  * @Last modified time: 2017-08-31T12:23:55+05:30
->>>>>>> e1c0d7bc501110421643b84275cd7f57d0316703
 */
 
 
@@ -104,7 +100,6 @@ img#background {
 }
 .footer {
   background: none repeat scroll 0 0 #E0E0E0;
-<<<<<<< HEAD
 }
 
 .brand-img{
@@ -115,18 +110,6 @@ img#background {
 .channel-title:hover, .channel-name:hover{
   color: #2962ff;
 }
-=======
-}
-
-.brand-img{
-  height: 100px;
-  width: 100px;
-  margin: auto;
-}
-.channel-title:hover, .channel-name:hover{
-  color: #2962ff;
-}
->>>>>>> e1c0d7bc501110421643b84275cd7f57d0316703
 .channel-name{
   text-align: center;
 }
