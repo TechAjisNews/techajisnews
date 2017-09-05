@@ -2,7 +2,7 @@
  * @Author: Mohammed Ismail
  * @Date:   2017-08-30T16:05:45+05:30
  * @Last modified by:   Mohammed Ismail
- * @Last modified time: 2017-09-05T13:22:33+05:30
+ * @Last modified time: 2017-09-05T14:35:27+05:30
  */
  app.controller('newsController', ['$scope','appService',function(
    $scope,appService) {
@@ -15,12 +15,12 @@
        $scope.category = category;
        appService.getNewsBySource(category).then(function(data){
          $scope.sourceData = data;
+          console.log("sourcesData",$scope.sources)
        },function(error){
          // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
        })
      };
      $scope.getBbcHeadlines = function(){
-       console.log('BBC news');
        appService.getBbcHeadlines().then(function(data){
          $scope.sourceData = data;
        },function(error){
@@ -29,23 +29,22 @@
      };
 
      $scope.getAllSources = function(){
-       console.log('RSS-News7');
        appService.getAllSources().then(function(data){
          $scope.sources = data;
+         console.log("sources",$scope.sources)
        },function(errorResponse){
          // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
        })
      }
 
-    //  $scope.getTopStories = function(source,sortBy){
-    //    console.log('top stories source',  source);
-    //    appService.getTopStories(source,sortBy).then(function(data){
-    //      $scope.topStories = data;
-    //      console.log("topStories + ", $scope.topStories);
-    //    },function(errorResponse){
-    //      // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
-    //    })
-    //  }
+     $scope.getStories = function(source,sortBy){
+       appService.getStories(source,sortBy).then(function(data){
+         $scope.sourceData = data;
+         console.log($scope.sourceData);
+       },function(errorResponse){
+         // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
+       })
+     }
 
      $scope.getAllSources();
 
