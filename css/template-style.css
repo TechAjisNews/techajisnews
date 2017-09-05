@@ -107,12 +107,13 @@ article hr {
   width: 100px;
   margin: auto;
 }
-
 .brand-img-auto{
-  height: auto;
-  width: auto;
-  margin: auto;
+ height: 200px;
+ width: 300px;
+ margin: auto;
+ padding: 10px;
 }
+
 
 .channel-title:hover, .channel-name:hover{
   color: #2962ff;
