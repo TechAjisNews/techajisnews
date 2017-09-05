@@ -2,7 +2,7 @@
 * @Author: Mohammed Ismail <ikismail7>
 * @Date:   2017-08-28T19:00:36+05:30
  * @Last modified by:   Mohammed Ismail
- * @Last modified time: 2017-09-05T13:03:27+05:30
+ * @Last modified time: 2017-09-05T13:07:47+05:30
 */
 app.factory('appService',['$http', function($http){
   var appService = this;
@@ -10,8 +10,10 @@ app.factory('appService',['$http', function($http){
   var GET_ALL_SOURCES = "https://newsapi.org/v1/sources";
   var GET_SOURCE_URL="https://newsapi.org/v1/sources?category=";
   var GET_ICON = "https://icons.better-idea.org/icon?url=";
-  var GET_BBC_HEADLINES="https://newsapi.org/v1/articles?source=";
+  // var GET_BBC_HEADLINES="https://newsapi.org/v1/articles?source=";
+  var GET_BBC_HEADLINES="https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey=10ad575c68f24879949f89147d38c9ce";
   var generatedValue= "10ad575c68f24879949f89147d38c9ce";
+
 
   appService.getNewsBySource = function(category){
     console.log('category ->',category);
