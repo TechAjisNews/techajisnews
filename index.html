@@ -10,8 +10,8 @@
   <link rel="stylesheet" href="css/responsee.css">
   <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
   <link rel="stylesheet" href="owl-carousel/owl.theme.css">
-  <link rel='stylesheet' href="http://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css" type='text/css' media='all' />    <!--  custom styles -->
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel='stylesheet' href="http://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css" type='text/css' media='all' />
+  <!--  custom styles -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
   <!-- CUSTOM STYLE -->
   <link rel="stylesheet" href="css/template-style.css">
@@ -33,10 +33,15 @@
       <div class="s-12 l-6">
         <div class="top-nav">
           <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">Product</a></li>
-            <li><a href="">Company</a></li>
+            <li><a href="#!home">Home</a></li>
+            <li><a href="#!topstory" ng-click="getBbcHeadlines()">Top Stories</a></li>
+<<<<<<< HEAD
+            <li><a href="">Popular News</a></li>
             <li><a href="">Contact</a></li>
+=======
+            <li><a href="">Company</a></li>
+            <li><a href="#!contact">Contact</a></li>
+>>>>>>> 5429d56c5a0e809468f90c6e14af75583b330e70
           </ul>
         </div>
       </div>
@@ -55,6 +60,7 @@
     <div id="content-wrapper">
       <!-- LEFT COLUMN -->
       <div class="s-12 m-4 l-3" ng-include="'view/leftNav.html'"></div>
+
       <!-- Middle COLUMN -->
 
       <div class="s-12 m-8 l-9">
@@ -87,9 +93,6 @@
   </div>
 
 
-
-
-
   <!-- Scripts -->
   <script src="js/tether.min.js" charset="utf-8"></script>
   <script src="js/bootstrap.min.js" charset="utf-8"></script>
@@ -100,13 +103,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/x2js/1.2.0/xml2json.min.js" charset="utf-8"></script>
-
   <!-- AngularScripts -->
   <script src="scripts/app.js" charset="utf-8"></script>
   <script src="scripts/appController.js" charset="utf-8"></script>
   <script src="scripts/appService.js" charset="utf-8"></script>
   <!-- /AngularScripts -->
-
 
   <script type="text/javascript">
   jQuery(document).ready(function($) {

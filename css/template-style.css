@@ -1,97 +1,145 @@
+/**
+<<<<<<< HEAD
+* @Author: Mohammed Ismail <ikismail7>
+* @Author: Saleemah <Saleemahmh>
+* @Date:   2017-09-05T19:00:36+05:30
+ * @Last modified by:   Saleemahmh
+ * @Last modified time: 2017-09-05T14:28:38+05:30
+=======
+* @Author: Mohammed Ismail
+* @Date:   2017-08-30T15:59:02+05:30
+ * @Last modified by:   Mohammed Ismail
+ * @Last modified time: 2017-09-05T15:49:58+05:30
+>>>>>>> 5429d56c5a0e809468f90c6e14af75583b330e70
+*/
+
+
+
 body {
-    background: none repeat scroll 0 0 #252D30;
+  background: none repeat scroll 0 0 #252D30;
 }
 .logo-box {
-    background: none repeat scroll 0 0 #252D30;
-    display: block;
-    padding: 1.25em;
-    width: 100%;
-    border-bottom: 1px solid #151E1F;
+  background: none repeat scroll 0 0 #252D30;
+  display: block;
+  padding: 1.25em;
+  width: 100%;
+  border-bottom: 1px solid #151E1F;
 }
 h1 {
-    color: #FFFFFF;
-    font-family: impact,tahoma;
-    font-size: 1.5em;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+  color: #FFFFFF;
+  font-family: impact,tahoma;
+  font-size: 1.5em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
+
+.aside-nav{
+    padding: 10px;
+}
+
 .aside-nav ul {
-    background: none repeat scroll 0 0 #252D30;
+  background: none repeat scroll 0 0 #252D30;
 }
 .aside-nav li a {
-    border-bottom: 1px solid #151E1F;
-    color: #FFFFFF;
+  border-bottom: 1px solid #151E1F;
+  color: #FFFFFF;
 }
 .aside-nav li a:link, .aside-nav li a:visited {
-    color: #FFFFFF;
+  color: #FFFFFF;
 }
 .aside-nav li > ul,.aside-nav li ul ul {
-    background: none repeat scroll 0 0 #151E1F;
+  background: none repeat scroll 0 0 #151E1F;
 }
 .top-nav li a:hover, .aside-nav li a:hover,.aside-nav > ul > li.active-item > a:link, .aside-nav > ul > li.active-item > a:visited {
-    background: none repeat scroll 0 0 #181F22;
+  background: none repeat scroll 0 0 #181F22;
 }
 i {
-    color: #E36132;
-    display: inline-block;
-    font-size: 1.2em;
-    width: 1.8em;
+  color: #E36132;
+  display: inline-block;
+  font-size: 1.2em;
+  width: 1.8em;
 }
 .date {
-    text-align: center;
+  text-align: center;
 }
 .date span {
-    font-size: 2.7em;
+  font-size: 2.7em;
 }
 .date i {
-    color: #D0D0D0;
-    font-size: 1.5em;
-    width: auto;
+  color: #D0D0D0;
+  font-size: 1.5em;
+  width: auto;
 }
 #search,#social {
-    border-top: 1px solid #151E1F;
-    padding: 1.25em;
-    position: relative;
+  border-top: 1px solid #151E1F;
+  padding: 1.25em;
+  position: relative;
 }
 #search i {
-    margin-left: 0.625em;
-    width: auto;
+  margin-left: 0.625em;
+  width: auto;
 }
 #social i {
-    color: #B0B0B0;
-    font-size: 1.8em;
-    width: auto;
+  color: #B0B0B0;
+  font-size: 1.8em;
+  width: auto;
 }
 article hr {
-    color: #E0E0E0;
-    margin: 1.25em 0;
+  color: #E0E0E0;
+  margin: 1.25em 0;
 }
 #content-wrapper:after {
-    clear: both;
-    content: ".";
-    display: block;
-    height: 0;
-    line-height: 0;
-    visibility: hidden;
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
 }
 #content-wrapper {
-    background: none repeat scroll 0 0 #252D30;
+  background: none repeat scroll 0 0 #252D30;
 }
-img#background {
-    height: auto;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: -10;
+#background {
+  height: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -10;
 }
 .footer {
-    background: none repeat scroll 0 0 #E0E0E0;
+  background: none repeat scroll 0 0 #E0E0E0;
 }
+
+.brand-img{
+  height: 100px;
+  width: 100px;
+  margin: auto;
+}
+.brand-img-auto{
+ height: 200px;
+ width: 300px;
+ margin: auto;
+ padding: 10px;
+}
+
+
+.channel-title:hover, .channel-name:hover{
+  color: #2962ff;
+}
+.channel-name{
+  text-align: center;
+}
+
+.aside-nav .chevron h4{
+  color: white;
+}
+
+
 @media screen and (max-width: 768px) {
   .aside-nav li a,#search,#social {
-      padding: 0.625em 1.25em;
+    padding: 0.625em 1.25em;
   }
   .date {
-      text-align: left;
+    text-align: left;
   }
 }
