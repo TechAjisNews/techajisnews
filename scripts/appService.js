@@ -31,7 +31,7 @@ app.factory('appService',['$http', function($http){
        appService.getBbcHeadlines = function () {
             console.log('getBbcHeadlines');
             return $http.get( GET_BBC_HEADLINES).then(function(response){
-              return response.data.sources;
+              return response.data.articles;
             },function(errorResponse){
               console.log('Error while fetching all sources');
             })

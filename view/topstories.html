@@ -1,0 +1,19 @@
+<section>
+  <article class="line" ng-repeat="data in sourceData">
+    <div class="margin">
+      <h4>{{data.author}}</h4>
+      <div class="s-12 m-12 l-2 hm-zoom">
+        <a ng-href="{{data.urlToImage}}" target="_blank">
+          <img ng-src="{{data.urlToImage}}"
+          alt="..." class="brand-img">
+        </a>
+      </div>
+      <div class="s-12 m-12 l-10">
+        <a ng-href="{{data.url}}" target="_blank"><h4 class="channel-title">{{data.title}}</h4></a>
+        <p>{{data.description}}</p>
+        <br />
+        <hr>
+      </div>
+    </div>
+  </article>
+</section>
