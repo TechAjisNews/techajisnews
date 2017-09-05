@@ -2,7 +2,7 @@
  * @Author: Mohammed Ismail
  * @Date:   2017-08-30T16:05:45+05:30
  * @Last modified by:   Mohammed Ismail
- * @Last modified time: 2017-09-05T13:04:52+05:30
+ * @Last modified time: 2017-09-05T13:22:33+05:30
  */
  app.controller('newsController', ['$scope','appService',function(
    $scope,appService) {

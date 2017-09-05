@@ -2,11 +2,7 @@
 * @Author: Mohammed Ismail
 * @Date:   2017-08-30T15:59:02+05:30
  * @Last modified by:   Mohammed Ismail
- * @Last modified time: 2017-08-31T13:11:55+05:30
- * @Last modified time: 2017-08-31T13:11:55+05:30
-
-
->>>>>>> af4030f430aedcc5d712c8a76ab918d4c09eea12
+ * @Last modified time: 2017-09-05T14:18:15+05:30
 */
 
 
@@ -95,7 +91,7 @@ article hr {
 #content-wrapper {
   background: none repeat scroll 0 0 #252D30;
 }
-img#background {
+#background {
   height: auto;
   position: fixed;
   top: 0;
@@ -111,6 +107,13 @@ img#background {
   width: 100px;
   margin: auto;
 }
+
+.brand-img-auto{
+  height: auto;
+  width: auto;
+  margin: auto;
+}
+
 .channel-title:hover, .channel-name:hover{
   color: #2962ff;
 }
