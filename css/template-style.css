@@ -2,7 +2,7 @@
 * @Author: Mohammed Ismail
 * @Date:   2017-08-30T15:59:02+05:30
  * @Last modified by:   Mohammed Ismail
- * @Last modified time: 2017-09-05T14:51:21+05:30
+ * @Last modified time: 2017-09-05T15:49:58+05:30
 */
 
 
@@ -107,13 +107,13 @@ article hr {
   width: 100px;
   margin: auto;
 }
-
 .brand-img-auto{
-  height: 200px;
-  width: 300px;
-  margin: auto;
-  padding: 10px;
+ height: 200px;
+ width: 300px;
+ margin: auto;
+ padding: 10px;
 }
+
 
 .channel-title:hover, .channel-name:hover{
   color: #2962ff;
