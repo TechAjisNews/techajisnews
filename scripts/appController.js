@@ -20,6 +20,7 @@
        })
      };
      $scope.getBbcHeadlines = function(){
+       console.log('BBC news');
        appService.getBbcHeadlines().then(function(data){
          $scope.sourceData = data;
        },function(error){

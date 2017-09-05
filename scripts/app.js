@@ -19,6 +19,9 @@
    .when("/newspapers", {
      templateUrl : "view/allNewsPaper.html"
    })
+   .when("/topstory", {
+     templateUrl : "view/topstories.html"
+   })
    .otherwise({
      redirectTo : '/'
    });
