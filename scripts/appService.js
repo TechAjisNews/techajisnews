@@ -10,22 +10,13 @@ app.factory('appService',['$http', function($http){
   var GET_ALL_SOURCES = "https://newsapi.org/v1/sources";
   var GET_SOURCE_URL="https://newsapi.org/v1/sources?category=";
   var GET_ICON = "https://icons.better-idea.org/icon?url=";
-  var GET_LANGUAGE_URL="https://newsapi.org/v1/sources?language=";
-
+  var GET_BBC_HEADLINES="https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey=10ad575c68f24879949f89147d38c9ce";
   appService.getNewsBySource = function(category){
     console.log('category ->',category);
     return $http.get(GET_SOURCE_URL + category).then(function(response){
       return response.data.sources;
     },function(errorResponse){
       console.log('Error While fetching Data in service')
-    })
-  };
-  appService.getNewsByLanguage = function(language){
-    console.log('language ->',language);
-    return $http.get(GET_LANGUAGE_URL + language).then(function(response){
-      return response.data.sources;
-    },function(errorResponse){
-      console.log('Error While fetching Data by language in service')
     })
   };
 
@@ -37,7 +28,14 @@ app.factory('appService',['$http', function($http){
           console.log('Error while fetching all sources');
         })
        };
-
+       appService.getBbcHeadlines = function () {
+            console.log('getBbcHeadlines');
+            return $http.get( GET_BBC_HEADLINES).then(function(response){
+              return response.data.sources;
+            },function(errorResponse){
+              console.log('Error while fetching all sources');
+            })
+           };
 
       return appService;
     }])
