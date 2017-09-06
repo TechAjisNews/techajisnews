@@ -1,5 +1,5 @@
 <section>
-  <article class="line" ng-repeat="stories in topStories">
+  <article class="line" ng-repeat="stories in topStories | limitTo: paginationLimit()">
     <div ng-repeat="data in stories">
       <div class="margin">
 
@@ -14,10 +14,13 @@
           <p>{{data.description}}</p>
           <h6><span style="color:red">{{data.author}}</span></h6>
           <h6 style="text-align:right;color:blue;">Published At: {{data.publishedAt}}</h6>
-          <br /><br /> <br/>
+          <br /><br />
           <hr>
         </div>
       </div>
     </div>
   </article>
+  <button class="button rounded-btn s-12 margin-bottom" ng-show="hasMoreStoriesToShow()" ng-click="showMoreItems()">
+View more
+</button>
 </section>

@@ -87,7 +87,9 @@ $scope.paginationLimit = function(data) {
 $scope.hasMoreItemsToShow = function() {
  return pagesShown < ($scope.latest.length / pageSize);
 };
-
+$scope.hasMoreStoriesToShow = function() {
+ return pagesShown < ($scope.topStories.length / pageSize);
+};
 $scope.showMoreItems = function() {
  pagesShown = pagesShown + 1;
 };
