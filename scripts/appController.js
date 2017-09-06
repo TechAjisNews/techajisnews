@@ -15,8 +15,13 @@ app.controller('newsController', ['$scope','appService',function(
     var topStoriesSource = ['bbc-news', 'cnbc','cnn','daily-mail',
     'engadget', 'mtv-news', 'espn-cric-info', 'time',
     'techradar', 'google-news', 'the-times-of-india'];
-    $scope.topStories = [];
 
+    var latestSource=['al-jazeera-english','breitbart-news', 'business-insider', 'business-insider-uk', 'buzzfeed',
+    'daily-mail', 'engadget', 'espn-cric-info', 'financial-times', 'fox-sports', 'hacker-news', 'ign',
+    'metro', 'mirror', 'mtv-news', 'newsweek', 'new-york-magazine','reuters', 'techcrunch', 'techradar',
+     'the-hindu', 'the-next-web', 'the-telegraph', 'the-times-of-india'];
+    $scope.topStories = [];
+    $scope.latest=[];
 
     $scope.getNewsBySource = function(category){
       $scope.category = category;
@@ -38,7 +43,18 @@ app.controller('newsController', ['$scope','appService',function(
         })
       }
     };
-
+    $scope.getLatest = function(){
+      $scope.latest = [];
+      console.log('Latest');
+      for (var i = 0; i < latestSource.length; i++) {
+          appService.getStories(latestSource[i], 'latest').then(function(data){
+          $scope.latest.push(data);
+          console.log($scope.latest);
+        },function(error){
+          // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
+        })
+      }
+    };
     $scope.getAllSources = function(){
       appService.getAllSources().then(function(data){
         $scope.sources = data;
