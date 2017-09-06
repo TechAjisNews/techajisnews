@@ -12,7 +12,7 @@ app.factory('appService',['$http', function($http){
   var GET_SOURCE_URL="https://newsapi.org/v1/sources?category=";
   var GET_ICON = "https://icons.better-idea.org/icon?url=";
    var GET_STORIES="https://newsapi.org/v1/articles?source=";
-  var GET_BBC_HEADLINES="https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey=10ad575c68f24879949f89147d38c9ce";
+  var GET_BBC_HEADLINES="https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey=";
   var generatedValue= "10ad575c68f24879949f89147d38c9ce";
 
   appService.getNewsBySource = function(category){
@@ -32,7 +32,7 @@ app.factory('appService',['$http', function($http){
 
   };
   appService.getBbcHeadlines = function () {
-    return $http.get( GET_BBC_HEADLINES).then(function(response){
+    return $http.get( GET_BBC_HEADLINES+generatedValue).then(function(response){
       return response.data.articles;
     },function(errorResponse){
       console.log('Error while fetching all sources');
