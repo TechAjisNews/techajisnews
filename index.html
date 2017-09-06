@@ -8,8 +8,6 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/icons.css">
   <link rel="stylesheet" href="css/responsee.css">
-  <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
-  <link rel="stylesheet" href="owl-carousel/owl.theme.css">
   <link rel='stylesheet' href="http://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css" type='text/css' media='all' />
   <!--  custom styles -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
@@ -20,7 +18,7 @@
   <script src="js/jquery-3.1.1.min.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 </head>
-<body class="" ng-controller="newsController" ng-init="getLatest(data.id, 'latest')">
+<body class="" ng-controller="newsController">
 
   <!-- Loading-Bar -->
   <div id="loading-bar-container"></div>
@@ -33,7 +31,7 @@
       <div class="s-12 l-6">
         <div class="top-nav">
           <ul>
-            <li><a href="#!home">Home</a></li>
+            <li><a href="#!home" ng-click="getLatest()">Home</a></li>
             <li><a href="#!topstory" ng-click="getTopStories()">Top Stories</a></li>
             <li><a href="#!contact">Contact</a></li>
           </ul>
@@ -53,14 +51,7 @@
       <div class="s-12 m-8 l-9">
         <div class="box">
           <!-- HEADER -->
-          <!-- CAROUSEL -->
-          <div class="line">
-            <div id="owl-dem" class="owl-carousel owl-theme  margin-bottom">
-              <div class="item"><img src="img/940x380.jpg" alt=""></div>
-              <div class="item"><img src="img/940x380-2.jpg" alt=""></div>
-              <div class="item"><img src="img/940x380-3.jpg" alt=""></div>
-            </div>
-          </div>
+
 
           <div ng-view></div>
 
@@ -85,7 +76,6 @@
   <script src="js/bootstrap.min.js" charset="utf-8"></script>
   <script src="js/mdb.min.js" charset="utf-8"></script>
   <script type="text/javascript" src="js/responsee.js"></script>
-  <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js" charset="utf-8"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js" charset="utf-8"></script>
@@ -97,17 +87,6 @@
   <script src="scripts/appService.js" charset="utf-8"></script>
   <!-- /AngularScripts -->
 
-  <script type="text/javascript">
-  jQuery(document).ready(function($) {
-    $("#owl-demo").owlCarousel({
-      navigation : true,
-      slideSpeed : 300,
-      paginationSpeed : 400,
-      autoPlay : true,
-      singleItem:true
-    });
-  });
 
-  </script>
 </body>
 </html>

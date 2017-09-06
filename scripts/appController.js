@@ -3,7 +3,7 @@
 * @Author: Saleemah <Saleemahmh>
 * @Date:   2017-08-30T16:05:45+05:30
  * @Last modified by:   Mohammed Ismail
- * @Last modified time: 2017-09-06T17:38:11+05:30
+ * @Last modified time: 2017-09-06T18:21:39+05:30
 */
 app.controller('newsController', ['$scope','appService',function(
   $scope,appService) {
@@ -15,12 +15,10 @@ app.controller('newsController', ['$scope','appService',function(
     'engadget', 'mtv-news', 'espn-cric-info', 'time',
     'techradar', 'google-news', 'the-times-of-india'];
 
-    var latestSource=['al-jazeera-english','breitbart-news', 'business-insider', 'business-insider-uk', 'buzzfeed',
-    'daily-mail', 'engadget', 'espn-cric-info', 'fox-sports', 'ign',
+    var latestSource=['al-jazeera-english','breitbart-news', 'business-insider',
+     'business-insider-uk', 'buzzfeed','daily-mail', 'engadget', 'espn-cric-info', 'ign',
     'metro', 'mirror', 'mtv-news', 'newsweek', 'new-york-magazine','reuters', 'techcrunch', 'techradar',
-    'the-hindu', 'the-next-web', 'the-telegraph', 'the-times-of-india'];
-    $scope.topStories = [];
-    $scope.latest=[];
+    'the-next-web', 'the-telegraph', 'the-times-of-india'];
 
     $scope.getNewsBySource = function(category){
       $scope.category = category;
@@ -44,17 +42,20 @@ app.controller('newsController', ['$scope','appService',function(
     };
     $scope.getLatest = function(){
       $scope.latest = [];
+      $scope.carousels = [];
       console.log('Latest');
       for (var i = 0; i < latestSource.length; i++) {
         appService.getStories(latestSource[i], 'latest').then(function(data){
           $scope.latest.push(data);
-          console.log($scope.latest);
+          $scope.carousels.push(data[0]);
+          console.log('carousels',$scope.carousels);
         },function(error){
           // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
         })
       }
     };
     $scope.getAllSources = function(){
+      $scope.sources = [];
       appService.getAllSources().then(function(data){
         $scope.sources = data;
       },function(errorResponse){
@@ -70,7 +71,7 @@ app.controller('newsController', ['$scope','appService',function(
       })
     }
 
-    $scope.getAllSources();
+    $scope.getLatest();
 
 //Pagination
     //show more functionality
