@@ -20,7 +20,7 @@
   <script src="js/jquery-3.1.1.min.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 </head>
-<body class="" ng-controller="newsController">
+<body class="" ng-controller="newsController" ng-init="getLatest(data.id, 'latest')">
 
   <!-- Loading-Bar -->
   <div id="loading-bar-container"></div>
@@ -34,19 +34,11 @@
         <div class="top-nav">
           <ul>
             <li><a href="#!home">Home</a></li>
-            <li><a href="#!topstory" ng-click="getBbcHeadlines()">Top Stories</a></li>
-            <li><a href="">Popular News</a></li>
+            <li><a href="#!topstory" ng-click="getTopStories()">Top Stories</a></li>
             <li><a href="#!contact">Contact</a></li>
           </ul>
         </div>
       </div>
-      <!--Right side-->
-      <!-- <div class="s-12 l-6">
-        <form class="customform" style="padding: 0.625em;" action="http://google.com/">
-          <div class="s-8"><input type="text"  value="Search form" title="Search form"/></div>
-          <div class="s-4"><button type="submit">Search</button></div>
-        </form>
-      </div> -->
     </nav>
   </div>
   <!-- /Navigation Bar -->

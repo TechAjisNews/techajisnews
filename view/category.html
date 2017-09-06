@@ -2,14 +2,14 @@
   <article class="line" ng-repeat="data in sourceData">
     <div class="margin">
       <div class="s-12 m-12 l-2 hm-zoom">
-        <a ng-href="#!topstory" ng-click="getStories(data.id, 'top')">
+        <a ng-href="#!newsPage" ng-click="getStories(data.id, 'top')">
           <img
           ng-src="https://icons.better-idea.org/icon?url={{data.url}}&size=70..120..200"
           alt="..." class="brand-img">
         </a>
       </div>
       <div class="s-12 m-12 l-10">
-        <a ng-href="#!topstory" ng-click="getStories(data.id, 'top')">
+        <a ng-href="#!newsPage" ng-click="getStories(data.id, 'top')">
           <h4 class="channel-title">{{data.name}}</h4>
         </a>
         <p>{{data.description}}</p>
