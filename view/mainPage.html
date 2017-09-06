@@ -1,3 +1,5 @@
+
+<h3>Latest News Updates</h3><br/>
 <section>
   <article class="line" ng-repeat="stories in latest | limitTo: paginationLimit()">
     <div ng-repeat="data in stories">
@@ -14,7 +16,7 @@
           <p>{{data.description}}</p>
           <h6><span style="color:red">{{data.author}}</span></h6>
           <h6 style="text-align:right;color:blue;">Published At: {{data.publishedAt}}</h6>
-          <br /><br /> <br/>
+          <br /><br />
           <hr>
         </div>
       </div>

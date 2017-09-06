@@ -17,7 +17,7 @@ app.controller('newsController', ['$scope','appService',function(
     'techradar', 'google-news', 'the-times-of-india'];
 
     var latestSource=['al-jazeera-english','breitbart-news', 'business-insider', 'business-insider-uk', 'buzzfeed',
-    'daily-mail', 'engadget', 'espn-cric-info', 'financial-times', 'fox-sports', 'hacker-news', 'ign',
+    'daily-mail', 'engadget', 'espn-cric-info', 'fox-sports', 'ign',
     'metro', 'mirror', 'mtv-news', 'newsweek', 'new-york-magazine','reuters', 'techcrunch', 'techradar',
      'the-hindu', 'the-next-web', 'the-telegraph', 'the-times-of-india'];
     $scope.topStories = [];
@@ -80,7 +80,7 @@ var pagesShown = 1;
 
 var pageSize = 1;
 
-$scope.paginationLimit = function(data) {
+$scope.paginationLimit = function() {
  return pageSize * pagesShown;
 };
 
