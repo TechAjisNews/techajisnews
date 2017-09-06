@@ -79,7 +79,7 @@ app.controller('newsController', ['$scope','appService',function(
 
     var pageSize = 1;
 //categorySize denotes number of category shown
-var categorySize=5;
+var categorySize =5;
     $scope.paginationLimit = function() {
       return pageSize * pagesShown;
     };
@@ -98,9 +98,5 @@ var categorySize=5;
     $scope.showMoreItems = function() {
       pagesShown = pagesShown + 1;
     };
-    $scope.dateConversion=function(data) {
-        $scope.date = data;
-        $scope.formattedDate = moment($scope.date).format('YYYY-MM-DD');
-      return moment($scope.formattedDate).fromNow();
-    }
+
   }])
