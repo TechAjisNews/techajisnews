@@ -79,16 +79,22 @@ app.controller('newsController', ['$scope','appService',function(
     var pagesShown = 1;
 
     var pageSize = 1;
-
+//categorySize denotes number of category shown
+var categorySize=5;
     $scope.paginationLimit = function() {
       return pageSize * pagesShown;
     };
-
-    $scope.hasMoreItemsToShow = function() {
+    $scope.paginationCategoryLimit = function() {
+      return categorySize * pagesShown;
+    };
+    $scope.hasMoreLatestToShow = function() {
       return pagesShown < ($scope.latest.length / pageSize);
     };
     $scope.hasMoreStoriesToShow = function() {
       return pagesShown < ($scope.topStories.length / pageSize);
+    };
+    $scope.hasMoreCategoryToShow = function() {
+      return pagesShown < ($scope.sourceData.length / categorySize);
     };
     $scope.showMoreItems = function() {
       pagesShown = pagesShown + 1;
