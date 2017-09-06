@@ -73,4 +73,23 @@ app.controller('newsController', ['$scope','appService',function(
 
     $scope.getAllSources();
 
+
+//show more functionality
+
+var pagesShown = 1;
+
+var pageSize = 1;
+
+$scope.paginationLimit = function(data) {
+ return pageSize * pagesShown;
+};
+
+$scope.hasMoreItemsToShow = function() {
+ return pagesShown < ($scope.latest.length / pageSize);
+};
+
+$scope.showMoreItems = function() {
+ pagesShown = pagesShown + 1;
+};
+
   }])

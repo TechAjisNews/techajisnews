@@ -1,5 +1,5 @@
 <section>
-  <article class="line" ng-repeat="stories in latest">
+  <article class="line" ng-repeat="stories in latest | limitTo: paginationLimit()">
     <div ng-repeat="data in stories">
       <div class="margin">
 
@@ -20,4 +20,8 @@
       </div>
     </div>
   </article>
+
+  <button class="button rounded-btn s-12 margin-bottom" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()">
+View more
+</button>
 </section>
