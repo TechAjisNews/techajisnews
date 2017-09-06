@@ -11,7 +11,6 @@ app.controller('newsController', ['$scope','appService',function(
     $scope.category;
     $scope.sourceData = [];
     $scope.image ;
-
     var topStoriesSource = ['bbc-news', 'cnbc','cnn','daily-mail',
     'engadget', 'mtv-news', 'espn-cric-info', 'time',
     'techradar', 'google-news', 'the-times-of-india'];
@@ -73,7 +72,7 @@ app.controller('newsController', ['$scope','appService',function(
 
     $scope.getAllSources();
 
-
+//Pagination
     //show more functionality
 
     var pagesShown = 1;
@@ -99,5 +98,9 @@ var categorySize=5;
     $scope.showMoreItems = function() {
       pagesShown = pagesShown + 1;
     };
-
+    $scope.dateConversion=function(data) {
+        $scope.date = data;
+        $scope.formattedDate = moment($scope.date).format('YYYY-MM-DD');
+      return moment($scope.formattedDate).fromNow();
+    }
   }])
