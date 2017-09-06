@@ -3,7 +3,7 @@
 * @Author: Saleemah <Saleemahmh>
 * @Date:   2017-08-30T16:05:45+05:30
  * @Last modified by:   Mohammed Ismail
- * @Last modified time: 2017-09-06T16:21:15+05:30
+ * @Last modified time: 2017-09-06T17:38:11+05:30
 */
 app.controller('newsController', ['$scope','appService',function(
   $scope,appService) {
@@ -78,8 +78,9 @@ app.controller('newsController', ['$scope','appService',function(
     var pagesShown = 1;
 
     var pageSize = 1;
-//categorySize denotes number of category shown
-var categorySize =5;
+    //categorySize denotes number of category shown
+    var categorySize =5;
+
     $scope.paginationLimit = function() {
       return pageSize * pagesShown;
     };
