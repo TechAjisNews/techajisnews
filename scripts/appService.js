@@ -3,7 +3,7 @@
 * @Author: Saleemah <Saleemahmh>
 * @Date:   2017-08-28T19:00:36+05:30
  * @Last modified by:   Mohammed Ismail
- * @Last modified time: 2017-09-06T12:20:28+05:30
+ * @Last modified time: 2017-09-07T16:55:19+05:30
 */
 app.factory('appService',['$http', function($http){
   var appService = this;
@@ -15,6 +15,7 @@ app.factory('appService',['$http', function($http){
   var generatedValue= "10ad575c68f24879949f89147d38c9ce";
 
   appService.getNewsBySource = function(category){
+    console.log('category', category);
     return $http.get(GET_SOURCE_URL + category).then(function(response){
       return response.data.sources;
     },function(errorResponse){

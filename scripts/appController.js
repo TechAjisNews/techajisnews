@@ -3,12 +3,11 @@
 * @Author: Saleemah <Saleemahmh>
 * @Date:   2017-08-30T16:05:45+05:30
  * @Last modified by:   Mohammed Ismail
- * @Last modified time: 2017-09-07T16:28:18+05:30
+ * @Last modified time: 2017-09-07T17:04:20+05:30
 */
 app.controller('newsController', ['$scope','appService',function(
   $scope,appService) {
 
-    $scope.category;
     $scope.sourceData = [];
     $scope.image ;
     var topStoriesSource = ['bbc-news', 'cnbc', 'daily-mail',
@@ -21,7 +20,6 @@ app.controller('newsController', ['$scope','appService',function(
     'the-next-web', 'the-telegraph', 'the-times-of-india'];
 
     $scope.getNewsBySource = function(category){
-      $scope.category = category;
       appService.getNewsBySource(category).then(function(data){
         $scope.sourceData = data;
       },function(error){
@@ -73,6 +71,26 @@ app.controller('newsController', ['$scope','appService',function(
       })
     }
 
+    //Getting all the sources by category wise and after that all the top stories
+    // realated to that sources.
+    $scope.getTopStoriesByCategory = function(category){
+        var sourcesByCategory = [];
+        $scope.articlesBySource = [];
+        appService.getNewsBySource(category).then(function(data){
+            sourcesByCategory = data;
+            console.log('sourcesByCategory',sourcesByCategory);
+            for(var i=0; i < sourcesByCategory.length; i++){
+                appService.getStories(sourcesByCategory[i].id, 'top').then(function(data){
+                  $scope.articlesBySource.push(data);
+                  console.log('articlesByCategories', $scope.articlesBySource);
+                },function(errorResponse){
+                  // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
+                })
+            }
+        },function(errorResponse){
+          // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
+        })
+    }
 
     //Pagination
     //show more functionality
