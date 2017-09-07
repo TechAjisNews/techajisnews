@@ -3,7 +3,7 @@
 * @Author: Saleemah <Saleemahmh>
 * @Date:   2017-08-30T16:05:45+05:30
  * @Last modified by:   Mohammed Ismail
- * @Last modified time: 2017-09-07T17:04:20+05:30
+ * @Last modified time: 2017-09-07T19:42:20+05:30
 */
 app.controller('newsController', ['$scope','appService',function(
   $scope,appService) {
@@ -28,7 +28,6 @@ app.controller('newsController', ['$scope','appService',function(
     };
     $scope.getTopStories = function(){
       $scope.topStories = [];
-      console.log('topStories');
       for (var i = 0; i < topStoriesSource.length; i++) {
         appService.getStories(topStoriesSource[i], 'top').then(function(data){
           $scope.topStories.push(data);
@@ -42,7 +41,6 @@ app.controller('newsController', ['$scope','appService',function(
 
     $scope.getLatest = function(){
       $scope.latest = [];
-      console.log('Latest');
       for (var i = 0; i < latestSource.length; i++) {
         appService.getStories(latestSource[i], 'latest').then(function(data){
           $scope.latest.push(data);
@@ -63,7 +61,8 @@ app.controller('newsController', ['$scope','appService',function(
       })
     }
 
-    $scope.getStories = function(source,sortBy){
+    $scope.getStories = function(source,sortBy, sourceName){
+      $scope.sourceName = sourceName;
       appService.getStories(source,sortBy).then(function(data){
         $scope.sourceData = data;
       },function(errorResponse){
@@ -78,11 +77,9 @@ app.controller('newsController', ['$scope','appService',function(
         $scope.articlesBySource = [];
         appService.getNewsBySource(category).then(function(data){
             sourcesByCategory = data;
-            console.log('sourcesByCategory',sourcesByCategory);
             for(var i=0; i < sourcesByCategory.length; i++){
-                appService.getStories(sourcesByCategory[i].id, 'top').then(function(data){
+                appService.getStoriesByCategory(sourcesByCategory[i].id , sourcesByCategory[i].name).then(function(data){
                   $scope.articlesBySource.push(data);
-                  console.log('articlesByCategories', $scope.articlesBySource);
                 },function(errorResponse){
                   // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
                 })

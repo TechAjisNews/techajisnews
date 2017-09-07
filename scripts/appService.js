@@ -3,7 +3,7 @@
 * @Author: Saleemah <Saleemahmh>
 * @Date:   2017-08-28T19:00:36+05:30
  * @Last modified by:   Mohammed Ismail
- * @Last modified time: 2017-09-07T16:55:19+05:30
+ * @Last modified time: 2017-09-07T18:51:55+05:30
 */
 app.factory('appService',['$http', function($http){
   var appService = this;
@@ -15,7 +15,6 @@ app.factory('appService',['$http', function($http){
   var generatedValue= "10ad575c68f24879949f89147d38c9ce";
 
   appService.getNewsBySource = function(category){
-    console.log('category', category);
     return $http.get(GET_SOURCE_URL + category).then(function(response){
       return response.data.sources;
     },function(errorResponse){
@@ -35,6 +34,23 @@ app.factory('appService',['$http', function($http){
   appService.getStories = function (source, sortBy) {
     return $http.get( GET_STORIES + source + "&sortBy=" + sortBy + "&apiKey="
                         + generatedValue).then(function(response){
+      return response.data.articles;
+    },function(errorResponse){
+      console.log('Error while fetching all sources');
+    })
+  };
+
+  appService.getStoriesByCategory = function (sourceId, sourceName ) {
+    var sourceId = sourceId;
+    var sourceName = sourceName;
+
+    return $http.get( GET_STORIES + sourceId + "&apiKey="
+                        + generatedValue).then(function(response){
+
+                        for(var i=0; i< response.data.articles.length; i++){
+                          response.data.articles[i]['channel_id'] = sourceId;
+                          response.data.articles[i]['channel_name'] = sourceName;
+                        }
       return response.data.articles;
     },function(errorResponse){
       console.log('Error while fetching all sources');

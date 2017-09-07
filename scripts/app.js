@@ -3,7 +3,7 @@
  * @Author: Saleemah <Saleemahmh>
  * @Date:   2017-08-30T16:05:45+05:30
  * @Last modified by:   Mohammed Ismail
- * @Last modified time: 2017-09-06T12:40:32+05:30
+ * @Last modified time: 2017-09-07T17:10:30+05:30
  */
  var app = angular.module('myApp', ["ngRoute","angular-loading-bar"]);
  app.config(function($routeProvider) {
@@ -22,6 +22,9 @@
    })
    .when("/topstory", {
      templateUrl : "view/topstories.html"
+   })
+   .when("/topStoriesByCategory", {
+     templateUrl : "view/topStoriesByCategory.html"
    })
    .when("/newsPage", {
      templateUrl : "view/newsPage.html"
