@@ -12,67 +12,65 @@
               Business</a>
               <a href="#!category" ng-click="getNewsBySource('entertainment')">
                 <i class="fa fa-gamepad mr-3" aria-hidden="true"></i>Entertainment</a>
-                <a href="#!category" ng-click="getNewsBySource('music')">
-                  <i class="fa fa-play-circle mr-3" aria-hidden="true"></i>Music</a>
                   <a href="#!category" ng-click="getNewsBySource('sport')">
                     <i class="fa fa-futbol-o mr-3" aria-hidden="true"></i>Sports</a>
-              <a href="#!category" ng-click="getNewsBySource('science-and-nature')"><i class="fa fa-flask mr-3" aria-hidden="true"></i>Science and Nature</a>
-              <a href="#!category" ng-click="getNewsBySource('technology')"><i class="fa fa-usb mr-3" aria-hidden="true"></i>Technology</a>
-            </li>
-          </ul><br>
-          <h4 class="mb-2">Newspapers</h4>
+                    <a href="#!category" ng-click="getNewsBySource('science-and-nature')"><i class="fa fa-flask mr-3" aria-hidden="true"></i>Science and Nature</a>
+                    <a href="#!category" ng-click="getNewsBySource('technology')"><i class="fa fa-usb mr-3" aria-hidden="true"></i>Technology</a>
+                  </li>
+                </ul><br>
+                <h4 class="mb-2">Newspapers</h4>
 
-                  <div class="line">
-                    <div class="margin">
-                      <div class="s-12 l-4 hm-zoom"><div class="box-dark">
-                        <a href="http://www.aljazeera.com/" target="_blank">
-                          <img class="hoverable"
-                          ng-src="https://icons.better-idea.org/icon?url=http://www.aljazeera.com&size=70..120..200"
-                          alt="..." style="height:90px; margin-bottom:10px">
-                        </a>
-                      </div>
+                <div class="line">
+                  <div class="margin">
+                    <div class="s-12 l-4 hm-zoom"><div class="box-dark">
+                      <a ng-href="#!newsPage" ng-click="getStories('al-jazeera-english', 'top', 'Al Jazeera English')">
+                        <img class="hoverable"
+                        ng-src="https://icons.better-idea.org/icon?url=http://www.aljazeera.com&size=70..120..200"
+                        alt="..." style="height:90px; margin-bottom:10px">
+                      </a>
                     </div>
-                    <div class="s-12 l-4 hm-zoom"><div class="box-dark">
-                      <a href="http://www.bbc.co.uk/news" target="_blank">
-                        <img class="hoverable"
-                        ng-src="https://icons.better-idea.org/icon?url=http://www.bbc.co.uk/news&size=70..120..200"
-                        alt="..." style="height:90px; margin-bottom:10px">
-                      </a>
-                    </div></div>
-                    <div class="s-12 l-4 hm-zoom"><div class="box-dark">
-                      <a href="https://news.google.com" target="_blank">
-                        <img class="hoverable"
-                        ng-src="https://icons.better-idea.org/icon?url=https://news.google.com&size=70..120..200"
-                        alt="..." style="height:90px; margin-bottom:10px">
-                      </a>
-                    </div></div>
-                    <div class="s-12 l-4 hm-zoom"><div class="box-dark">
-                      <a href="http://us.cnn.com" target="_blank">
-                        <img class="hoverable"
-                        ng-src="https://icons.better-idea.org/icon?url=http://us.cnn.com&size=70..120..200"
-                        alt="..." style="height:90px; margin-bottom:10px">
-                      </a>
-                    </div></div>
-                    <div class="s-12 l-4 hm-zoom"><div class="box-dark">
-                      <a href="http://www.thehindu.com" target="_blank">
-                        <img class="hoverable"
-                        ng-src="https://icons.better-idea.org/icon?url=http://www.thehindu.com&size=70..120..200"
-                        alt="..." style="height:90px; margin-bottom:10px">
-                      </a>
-                    </div></div>
-                    <div class="s-12 l-4 hm-zoom"><div class="box-dark">
-                      <a href="http://www.nytimes.com" target="_blank">
-                        <img class="hoverable"
-                        ng-src="https://icons.better-idea.org/icon?url=http://www.nytimes.com&size=70..120..200"
-                        alt="..." style="height:90px; margin-bottom:10px">
-                      </a>
-                    </div></div>
                   </div>
+                  <div class="s-12 l-4 hm-zoom"><div class="box-dark">
+                    <a ng-href="#!newsPage" ng-click="getStories('bbc-news', 'top', 'BBC News')">
+                      <img class="hoverable"
+                      ng-src="https://icons.better-idea.org/icon?url=http://www.bbc.co.uk/news&size=70..120..200"
+                      alt="..." style="height:90px; margin-bottom:10px">
+                    </a>
+                  </div></div>
+                  <div class="s-12 l-4 hm-zoom"><div class="box-dark">
+                    <a ng-href="#!newsPage" ng-click="getStories('google-news', 'top', 'Google News')">
+                      <img class="hoverable"
+                      ng-src="https://icons.better-idea.org/icon?url=https://news.google.com&size=70..120..200"
+                      alt="..." style="height:90px; margin-bottom:10px">
+                    </a>
+                  </div></div>
+                  <div class="s-12 l-4 hm-zoom"><div class="box-dark">
+                    <a ng-href="#!newsPage" ng-click="getStories('cnn', 'top', 'CNN')">
+                      <img class="hoverable"
+                      ng-src="https://icons.better-idea.org/icon?url=http://us.cnn.com&size=70..120..200"
+                      alt="..." style="height:90px; margin-bottom:10px">
+                    </a>
+                  </div></div>
+                  <div class="s-12 l-4 hm-zoom"><div class="box-dark">
+                    <a ng-href="#!newsPage" ng-click="getStories('the-hindu', 'top', 'The Hindu')">
+                      <img class="hoverable"
+                      ng-src="https://icons.better-idea.org/icon?url=http://www.thehindu.com&size=70..120..200"
+                      alt="..." style="height:90px; margin-bottom:10px">
+                    </a>
+                  </div></div>
+                  <div class="s-12 l-4 hm-zoom"><div class="box-dark">
+                    <a ng-href="#!newsPage" ng-click="getStories('the-new-york-times', 'top', 'The New York Times')">
+                      <img class="hoverable"
+                      ng-src="https://icons.better-idea.org/icon?url=http://www.nytimes.com&size=70..120..200"
+                      alt="..." style="height:90px; margin-bottom:10px">
+                    </a>
+                  </div></div>
                 </div>
-
-                <a class="button rounded-btn s-12 margin-bottom" href="#!newspapers">View More</a>
-
-                <br>
               </div>
-    </div>
-  </div>
+
+              <a class="button rounded-btn s-12 margin-bottom" href="#!newspapers" ng-click="getAllSources()">View More</a>
+
+              <br>
+            </div>
+          </div>
+        </div>

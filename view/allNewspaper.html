@@ -3,7 +3,7 @@
     <div class="s-12 l-five" ng-repeat="data in sources">
       <div class="box-dark mt-2 ">
         <div class="">
-        <a ng-href="#!newsPage" ng-click="getStories(data.id, 'top')">
+        <a ng-href="#!newsPage" ng-click="getStories(data.id, 'top', data.name)">
             <div class="hm-zoom">
               <img class="brand-img"
               ng-src="https://icons.better-idea.org/icon?url={{data.url}}&size=70..120..200"
