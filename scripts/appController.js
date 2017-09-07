@@ -3,7 +3,7 @@
 * @Author: Saleemah <Saleemahmh>
 * @Date:   2017-08-30T16:05:45+05:30
  * @Last modified by:   Mohammed Ismail
- * @Last modified time: 2017-09-06T18:21:39+05:30
+ * @Last modified time: 2017-09-07T11:45:04+05:30
 */
 app.controller('newsController', ['$scope','appService',function(
   $scope,appService) {
@@ -11,7 +11,7 @@ app.controller('newsController', ['$scope','appService',function(
     $scope.category;
     $scope.sourceData = [];
     $scope.image ;
-    var topStoriesSource = ['bbc-news', 'cnbc','cnn','daily-mail',
+    var topStoriesSource = ['bbc-news', 'cnbc', 'daily-mail',
     'engadget', 'mtv-news', 'espn-cric-info', 'time',
     'techradar', 'google-news', 'the-times-of-india'];
 
@@ -34,26 +34,28 @@ app.controller('newsController', ['$scope','appService',function(
       for (var i = 0; i < topStoriesSource.length; i++) {
         appService.getStories(topStoriesSource[i], 'top').then(function(data){
           $scope.topStories.push(data);
-          console.log($scope.topStories);
         },function(error){
           // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
         })
       }
     };
+
+    $scope.getTopStories();
+
     $scope.getLatest = function(){
       $scope.latest = [];
-      $scope.carousels = [];
       console.log('Latest');
       for (var i = 0; i < latestSource.length; i++) {
         appService.getStories(latestSource[i], 'latest').then(function(data){
           $scope.latest.push(data);
-          $scope.carousels.push(data[0]);
-          console.log('carousels',$scope.carousels);
         },function(error){
           // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
         })
       }
     };
+
+    $scope.getLatest();
+
     $scope.getAllSources = function(){
       $scope.sources = [];
       appService.getAllSources().then(function(data){
@@ -71,9 +73,8 @@ app.controller('newsController', ['$scope','appService',function(
       })
     }
 
-    $scope.getLatest();
 
-//Pagination
+    //Pagination
     //show more functionality
 
     var pagesShown = 1;
