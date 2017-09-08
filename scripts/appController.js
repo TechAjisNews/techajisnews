@@ -3,7 +3,7 @@
 * @Author: Saleemah <Saleemahmh>
 * @Date:   2017-08-30T16:05:45+05:30
  * @Last modified by:   Mohammed Ismail
- * @Last modified time: 2017-09-07T19:42:20+05:30
+ * @Last modified time: 2017-09-08T13:38:33+05:30
 */
 app.controller('newsController', ['$scope','appService',function(
   $scope,appService) {
@@ -88,6 +88,17 @@ app.controller('newsController', ['$scope','appService',function(
           // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
         })
     }
+
+
+    $scope.getRSS = function(){
+      appService.getRSS().then(function(data){
+        console.log('RSS Data',data);
+      },function(errorResponse){
+          console.log('Error RSS');
+      })
+    }
+
+    $scope.getRSS();
 
     //Pagination
     //show more functionality
