@@ -2,8 +2,7 @@
 <div class="line">
 
   <div id="owl-demo2" class="owl-carousel margin-bottom">
-    <div class="item" style="padding:5px"><a href="#!rssFeed"
-        ng-click="getLocalRssFeeds()">
+    <div class="item" style="padding:5px"><a href="#!rssFeed"  ng-click="getLocalRssFeeds()">
       <img ng-src="http://placehold.it/300x70/00bcd4/fff?text=Local" alt=""></a>
     </div>
     <div class="item" style="padding:5px"><a href="#!topstory" ng-click="getTopStories()">
@@ -45,25 +44,40 @@
   </div>
 </div>
 
-<h3 class="channel-title">{{sourceName}}</h3><br/>
+<h3>Top Stories</h3><br/>
 <section>
-  <article class="line" ng-repeat="data in sourceData">
+  <article class="line" ng-repeat="data in localNews.items">
     <div class="margin">
 
       <div class="s-12 m-12 l-4 hm-zoom">
-        <a ng-href="{{data.urlToImage}}" target="_blank">
-          <img ng-src="{{data.urlToImage}}"
+        <a ng-href="{{data.link}}" target="_blank">
+          <img ng-src="{{data.content_modified.image_url}}"
           alt="..." class="brand-img-auto">
         </a>
       </div>
       <div class="s-12 m-12 l-8">
-        <a ng-href="{{data.url}}" target="_blank"><h4 class="channel-title">{{data.title}}</h4></a>
-        <p>{{data.description}}</p>
-        <h6 class="s-8"><span style="color:red">{{data.author}}</span></h6>
-        <h6 class="s-4" style="text-align:right;color:blue;">{{data.publishedAt}}</h6>
-        <br /><br /> <br/>
+        <a ng-href="{{data.link}}" target="_blank"><h4 class="channel-title">{{data.title}}</h4></a>
+        <p>{{data.content_modified.body}}</p>
+        <h6 class="s-12" style="text-align:right;color:blue;">{{data.pubDate}}</h6>
+        <br /><br />
         <hr>
       </div>
     </div>
   </article>
+  <!-- <button class="button rounded-btn s-4 margin-bottom center"
+  ng-show="hasMoreStoriesToShow()" ng-click="hasMoreRssFeedToShow()">View more
+</button> -->
 </section>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+  $("#owl-demo2").owlCarousel({
+    items : 4,
+    lazyLoad : true,
+    autoPlay : true,
+    navigation : false,
+    pagination : false
+  });
+});
+
+</script>
