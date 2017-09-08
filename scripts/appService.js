@@ -3,7 +3,7 @@
  * @Author: Saleemah <Saleemahmh>
  * @Date:   2017-08-28T19:00:36+05:30
  * @Last modified by:   Mohammed Ismail
- * @Last modified time: 2017-09-08T16:56:30+05:30
+ * @Last modified time: 2017-09-08T18:26:28+05:30
 
  */
 app.factory('appService', ['$http', function ($http) {
@@ -14,6 +14,7 @@ app.factory('appService', ['$http', function ($http) {
     var GET_ICON = "https://icons.better-idea.org/icon?url=";
     var GET_STORIES = "https://newsapi.org/v1/articles?source=";
     var GET_RSSFEEDS = "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.feedburner.com%2FPuthiyathalaimurai_Districts_News";
+    var RSSFEED_PT = "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.feedburner.com%2FPuthiyathalaimurai_Tamilnadu_News&api_key=3159ncurciuuew1nmfhqt5zap8r7nqisqzcx4yvt&order_by=pubDate&order_dir=desc&count=50"
     var generatedValue = "10ad575c68f24879949f89147d38c9ce";
 
     appService.getNewsBySource = function (category) {
@@ -60,8 +61,7 @@ app.factory('appService', ['$http', function ($http) {
     };
 
     appService.getLocalRssFeeds = function () {
-        return $http.get('https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.feedburner.com%2FPuthiyathalaimurai_Tamilnadu_News&api_key=3159ncurciuuew1nmfhqt5zap8r7nqisqzcx4yvt&order_by=pubDate&order_dir=desc&count=50')
-            .then(function (response) {
+        return $http.get(RSSFEED_PT).then(function (response) {
                 for (var i = 0; i < response.data.items.length; i++) {
                     var item = response.data.items[i];
                     var img = item.content.match(/http:.*?.jpg/g);
@@ -83,7 +83,7 @@ app.factory('appService', ['$http', function ($http) {
             }, function (errorResponse) {
                 console.log('Error while fetching all sources');
             })
-    }
+    };
 
     return appService;
 }])

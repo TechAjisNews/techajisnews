@@ -3,7 +3,7 @@
 * @Author: Saleemah <Saleemahmh>
 * @Date:   2017-08-30T16:05:45+05:30
  * @Last modified by:   Mohammed Ismail
- * @Last modified time: 2017-09-08T17:59:09+05:30
+ * @Last modified time: 2017-09-08T18:31:13+05:30
 */
 app.controller('newsController', ['$scope', 'appService', function ($scope, appService) {
 
@@ -116,13 +116,10 @@ app.controller('newsController', ['$scope', 'appService', function ($scope, appS
     $scope.localNews = [];
     appService.getLocalRssFeeds().then(function (data) {
       $scope.localNews = data;
-      console.log('localNews', $scope.localNews)
     }, function (errorResponse) {
-      console.log('Error RSS');
+      // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
     })
   }
-
-  $scope.getLocalRssFeeds();
 
 
   /*
@@ -151,6 +148,9 @@ app.controller('newsController', ['$scope', 'appService', function ($scope, appS
     return pagesShown < ($scope.topStories.length / pageSize);
   };
   $scope.hasMoreCategoryToShow = function () {
+    return pagesShown < ($scope.sourceData.length / categorySize);
+  };
+  $scope.hasMoreRssFeedToShow = function () {
     return pagesShown < ($scope.sourceData.length / categorySize);
   };
   $scope.showMoreItems = function () {
