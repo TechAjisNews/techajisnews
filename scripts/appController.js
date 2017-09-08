@@ -2,7 +2,7 @@
 * @Author: Mohammed Ismail <ikismail7>
 * @Author: Saleemah <Saleemahmh>
 * @Date:   2017-08-30T16:05:45+05:30
- * @Last modified by:   Mohammed Ismail
+ * @Last modified by:   Saleemah
  * @Last modified time: 2017-09-07T19:42:20+05:30
 */
 app.controller('newsController', ['$scope','appService',function(
@@ -60,7 +60,15 @@ app.controller('newsController', ['$scope','appService',function(
         // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
       })
     }
+$scope.getLocalRssFeeds=function(){
+  $scope.items=[];
+  appService.getLocalRssFeeds().then(function(data){
+    $scope.items=data;
 
+  },function(errorResponse){
+    // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
+})
+}
     $scope.getStories = function(source,sortBy, sourceName){
       $scope.sourceName = sourceName;
       appService.getStories(source,sortBy).then(function(data){
@@ -71,7 +79,7 @@ app.controller('newsController', ['$scope','appService',function(
     }
 
     //Getting all the sources by category wise and after that all the top stories
-    // realated to that sources.
+    // related to that sources.
     $scope.getTopStoriesByCategory = function(category){
         var sourcesByCategory = [];
         $scope.articlesBySource = [];
