@@ -3,7 +3,7 @@
  * @Author: Saleemah <Saleemahmh>
  * @Date:   2017-08-28T19:00:36+05:30
  * @Last modified by:   Mohammed Ismail
- * @Last modified time: 2017-09-08T16:51:52+05:30
+ * @Last modified time: 2017-09-08T16:56:30+05:30
 
  */
 app.factory('appService', ['$http', function ($http) {
@@ -72,13 +72,13 @@ app.factory('appService', ['$http', function ($http) {
                     var content_modified = {
                       "title" : $(content[0]).text(),
                       "body" : $(content[1]).text(),
-                      "description" : $(content[2]).text()
+                      "description" : $(content[2]).text(),
+                      "image_url" : img[0]
                     }
 
-                    response.data.items[i]['image_url'] = img[0];
                     response.data.items[i]['content_modified'] = content_modified;
                 }
-                
+
                 return response.data;
             }, function (errorResponse) {
                 console.log('Error while fetching all sources');

@@ -2,8 +2,12 @@
 <div class="line">
 
             <div id="owl-demo4" class="owl-carousel margin-bottom">
-               <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"><img ng-src="http://placehold.it/300x70/00bcd4/fff?text=Local" alt=""></a></div>
-               <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"><img ng-src="http://placehold.it/300x70/3f51b5/fff?text=World" alt=""></a></div>
+               <div class="item" style="padding:5px"><a href="#!rssFeed">
+                 <img ng-src="http://placehold.it/300x70/00bcd4/fff?text=Local" alt=""></a>
+               </div>
+               <div class="item" style="padding:5px"><a href="#!topStoriesByCategory">
+                 <img ng-src="http://placehold.it/300x70/3f51b5/fff?text=World" alt=""></a>
+               </div>
                <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
                  ng-click="getTopStoriesByCategory('business')">
                  <img ng-src="http://placehold.it/300x70/673ab7/fff?text=Business" alt=""></a></div>
@@ -31,28 +35,7 @@
 
             </div>
          </div>
-<h3>Local News</h3>
-<section>
-  <article class="line" ng-repeat="item in items ">
-      <div class="margin">
 
-        <div class="s-12 m-12 l-4 hm-zoom">
-          <a ng-href="{{item.img}}" target="_blank">
-            <img ng-src="{{item.urlToImage}}"
-            alt="..." class="brand-img-auto">
-          </a>
-        </div>
-        <div class="s-12 m-12 l-8">
-          <a ng-href="{{item.link}}" target="_blank"><h4 class="channel-title">{{item.title}}</h4></a>
-          <p>{{item.description}}</p>
-
-          <h6 class="s-8"><span style="color:red">{{item.author}}</span></h6>
-          <h6 class="s-4" style="text-align:right;color:blue;">{{item.pubDate}}</h6>
-          <br /><br />
-          <hr>
-      </div>
-    </div>
-  </article>
 <h3>Latest News Updates</h3><br/>
 <section>
   <article class="line" ng-repeat="stories in latest | limitTo: paginationLimit()">

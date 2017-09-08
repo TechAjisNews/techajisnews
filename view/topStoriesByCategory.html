@@ -1,37 +1,49 @@
 <!-- CAROUSEL -->
 <div class="line">
 
-            <div id="owl-demo3" class="owl-carousel margin-bottom">
-               <div class="item" style="padding:5px"><a href="#!topStoriesByCategory" ><img ng-src="http://placehold.it/300x70/00bcd4/fff?text=Local" alt=""></a></div>
-               <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
-                 ng-click="getTopStoriesByCategory('general')"><img ng-src="http://placehold.it/300x70/3f51b5/fff?text=World" alt=""></a></div>
-               <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
-                 ng-click="getTopStoriesByCategory('business')">
-                 <img ng-src="http://placehold.it/300x70/673ab7/fff?text=Business" alt=""></a></div>
-               <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
-                 ng-click="getTopStoriesByCategory('entertainment')">
-                 <img ng-src="http://placehold.it/300x70/db4437/fff?text=Entertainment" alt=""></a></div>
-               <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
-                 ng-click="getTopStoriesByCategory('gaming')">
-                 <img ng-src="http://placehold.it/300x70/9c27b0/fff?text=Gaming" alt=""></a></div>
-               <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
-                 ng-click="getTopStoriesByCategory('music')">
-                 <img ng-src="http://placehold.it/300x70/E36132/fff?text=Music" alt=""></a></div>
-               <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
-                 ng-click="getTopStoriesByCategory('politics')">
-                 <img ng-src="http://placehold.it/300x70/e91e63/fff?text=Politics" alt=""></a></div>
-               <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
-                 ng-click="getTopStoriesByCategory('science-and-nature')">
-                 <img ng-src="http://placehold.it/300x70/673ab7/fff?text=Science" alt=""></a></div>
-               <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
-                 ng-click="getTopStoriesByCategory('sport')">
-                 <img ng-src="http://placehold.it/300x70/009688/fff?text=Sports" alt=""></a></div>
-               <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
-                 ng-click="getTopStoriesByCategory('technology')">
-                 <img ng-src="http://placehold.it/300x70/db4437/fff?text=Technology" alt=""></a></div>
+  <div id="owl-demo3" class="owl-carousel margin-bottom">
+    <div class="item" style="padding:5px"><a href="#!topStoriesByCategory" >
+      <img ng-src="http://placehold.it/300x70/00bcd4/fff?text=Local" alt=""></a>
+    </div>
+    <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
+      ng-click="getTopStoriesByCategory('general')">
+      <img ng-src="http://placehold.it/300x70/3f51b5/fff?text=World" alt=""></a>
+    </div>
+    <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
+      ng-click="getTopStoriesByCategory('business')">
+      <img ng-src="http://placehold.it/300x70/673ab7/fff?text=Business" alt=""></a>
+    </div>
+    <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
+      ng-click="getTopStoriesByCategory('entertainment')">
+      <img ng-src="http://placehold.it/300x70/db4437/fff?text=Entertainment" alt=""></a>
+    </div>
+    <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
+      ng-click="getTopStoriesByCategory('gaming')">
+      <img ng-src="http://placehold.it/300x70/9c27b0/fff?text=Gaming" alt=""></a>
+    </div>
+    <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
+      ng-click="getTopStoriesByCategory('music')">
+      <img ng-src="http://placehold.it/300x70/E36132/fff?text=Music" alt=""></a>
+    </div>
+    <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
+      ng-click="getTopStoriesByCategory('politics')">
+      <img ng-src="http://placehold.it/300x70/e91e63/fff?text=Politics" alt=""></a>
+    </div>
+    <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
+      ng-click="getTopStoriesByCategory('science-and-nature')">
+      <img ng-src="http://placehold.it/300x70/673ab7/fff?text=Science" alt=""></a>
+    </div>
+    <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
+      ng-click="getTopStoriesByCategory('sport')">
+      <img ng-src="http://placehold.it/300x70/009688/fff?text=Sports" alt=""></a>
+    </div>
+    <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
+      ng-click="getTopStoriesByCategory('technology')">
+      <img ng-src="http://placehold.it/300x70/db4437/fff?text=Technology" alt=""></a>
+    </div>
 
-            </div>
-         </div>
+  </div>
+</div>
 
 <h3>Top Stories</h3><br/>
 <section>
@@ -59,21 +71,27 @@
       </div>
     </div>
   </article>
+<<<<<<< HEAD
  <button class="button rounded-btn s-4 margin-bottom center" ng-show="hasMoreStoriesToShow()" ng-click="showMoreItems()">
 View more
 </button>
+=======
+  <!-- <button class="button rounded-btn s-4 margin-bottom center" ng-show="hasMoreStoriesToShow()" ng-click="showMoreItems()">
+  View more
+</button> -->
+>>>>>>> 9f944cb533cfb86e6f450ef3880162f3296d2752
 </section>
 
 
 <script type="text/javascript">
 jQuery(document).ready(function($) {
   $("#owl-demo3").owlCarousel({
-        		items : 4,
-           	lazyLoad : true,
-           	autoPlay : true,
-           	navigation : false,
-           	pagination : false
-           });
+    items : 4,
+    lazyLoad : true,
+    autoPlay : true,
+    navigation : false,
+    pagination : false
+  });
 });
 
 </script>
