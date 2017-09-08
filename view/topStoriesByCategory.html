@@ -35,7 +35,7 @@
 
 <h3>Top Stories</h3><br/>
 <section>
-  <article class="line" ng-repeat="stories in articlesBySource">
+  <article class="line" ng-repeat="stories in articlesBySource | limitTo : paginationLimit()">
     <div ng-repeat="data in stories">
       <div class="margin">
 
@@ -59,9 +59,9 @@
       </div>
     </div>
   </article>
-<!-- <button class="button rounded-btn s-4 margin-bottom center" ng-show="hasMoreStoriesToShow()" ng-click="showMoreItems()">
+ <button class="button rounded-btn s-4 margin-bottom center" ng-show="hasMoreStoriesToShow()" ng-click="showMoreItems()">
 View more
-</button> -->
+</button>
 </section>
 
 
