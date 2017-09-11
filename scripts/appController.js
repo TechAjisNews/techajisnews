@@ -153,9 +153,6 @@ app.controller('newsController', ['$scope', 'appService', function ($scope, appS
   $scope.hasMoreCategoryToShow = function () {
     return pagesShown < ($scope.sourceData.length / categorySize);
   };
-  $scope.hasMoreRssFeedToShow = function () {
-    return pagesShown < ($scope.sourceData.length / categorySize);
-  };
   $scope.showMoreItems = function () {
     pagesShown = pagesShown + 1;
   };
