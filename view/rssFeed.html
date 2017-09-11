@@ -46,7 +46,7 @@
 
 <h3>Top Stories</h3><br/>
 <section>
-  <article class="line" ng-repeat="data in localNews.items">
+  <article class="line" ng-repeat="data in localNews.items | limitTo: paginationCategoryLimit()">
     <div class="margin">
 
       <div class="s-12 m-12 l-4 hm-zoom">
@@ -64,9 +64,9 @@
       </div>
     </div>
   </article>
-  <!-- <button class="button rounded-btn s-4 margin-bottom center"
-  ng-show="hasMoreStoriesToShow()" ng-click="hasMoreRssFeedToShow()">View more
-</button> -->
+  <button class="button rounded-btn s-4 margin-bottom center" ng-show="hasMoreStoriesToShow()" ng-click="showMoreItems()">
+    View more
+  </button>
 </section>
 
 <script type="text/javascript">

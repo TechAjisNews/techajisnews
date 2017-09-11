@@ -17,7 +17,7 @@ app.factory('appService', ['$http', function ($http) {
     var RSSFEED_PT = "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.feedburner.com%2FPuthiyathalaimurai_Tamilnadu_News&api_key=3159ncurciuuew1nmfhqt5zap8r7nqisqzcx4yvt&order_by=pubDate&order_dir=desc&count=50"
     var generatedValue = "10ad575c68f24879949f89147d38c9ce";
 
-    appService.getNewsBySource = function (category) {
+    appService.getNewsByCategory = function (category) {
         return $http.get(GET_SOURCE_URL + category).then(function (response) {
             return response.data.sources;
         }, function (errorResponse) {
@@ -34,7 +34,7 @@ app.factory('appService', ['$http', function ($http) {
 
     };
 
-    appService.getStories = function (source, sortBy) {
+    appService.getNewspapers = function (source, sortBy) {
         return $http.get(GET_STORIES + source + "&sortBy=" + sortBy + "&apiKey="
             + generatedValue).then(function (response) {
             return response.data.articles;
@@ -43,7 +43,7 @@ app.factory('appService', ['$http', function ($http) {
         })
     };
 
-    appService.getStoriesByCategory = function (sourceId, sourceName) {
+    appService.getNewspapersByCategory = function (sourceId, sourceName) {
         var sourceId = sourceId;
         var sourceName = sourceName;
 
