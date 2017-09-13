@@ -44,10 +44,35 @@
   </div>
 </div>
 
-<h3>Top Stories</h3><br/>
+<h3>Top DistrictNews Stories - Puthiyathalaimurai</h3><br/>
 <section>
-  <article class="line" ng-repeat="data in localNews.items | limitTo: paginationCategoryLimit()">
-    <div class="margin">
+  <article class="line" ng-repeat="data in districtNews.items | limitTo: paginationCategoryLimit()">
+    <div class="margin" ng-hide="!data.content_modified.body">
+
+      <div class="s-12 m-12 l-4 hm-zoom">
+        <a ng-href="{{data.link}}" target="_blank">
+          <img ng-src="{{data.content_modified.image_url}}"
+          alt="..." class="brand-img-auto">
+        </a>
+      </div>
+      <div class="s-12 m-12 l-8">
+        <a ng-href="{{data.link}}" target="_blank"><h4 class="channel-title">{{data.title}}</h4></a>
+        <p>{{data.content_modified.body}}</p>
+        <h6 class="s-12" style="text-align:right;color:blue;">{{data.pubDate}}</h6>
+        <br /><br />
+        <hr>
+      </div>
+    </div>
+  </article>
+  <button class="button rounded-btn s-4 margin-bottom center" ng-show="hasMoreStoriesToShow()" ng-click="showMoreItems()">
+    View more
+  </button>
+</section>
+
+<h3>Top IndianNews Stories - Puthiyathalaimurai</h3><br/>
+<section>
+  <article class="line" ng-repeat="data in indianNews_rss.items | limitTo: paginationCategoryLimit()">
+    <div class="margin" ng-hide="!data.content_modified.body">
 
       <div class="s-12 m-12 l-4 hm-zoom">
         <a ng-href="{{data.link}}" target="_blank">

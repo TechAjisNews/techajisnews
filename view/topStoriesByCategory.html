@@ -41,14 +41,14 @@
       ng-click="getTopStoriesByCategory('technology')">
       <img ng-src="http://placehold.it/300x70/db4437/fff?text=Technology" alt=""></a>
     </div>
-
   </div>
+
 </div>
 
 <h3>Top Stories</h3><br/>
 <section>
   <article class="line" ng-repeat="stories in articlesBySource | limitTo : paginationLimit()">
-    <div ng-repeat="data in stories">
+    <div ng-repeat="data in stories ">
       <div class="margin">
 
         <div class="s-12 m-12 l-4 hm-zoom">
