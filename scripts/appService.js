@@ -11,11 +11,10 @@ app.factory('appService', ['$http', function ($http) {
 
     var GET_ALL_SOURCES = "https://newsapi.org/v1/sources";
     var GET_SOURCE_URL = "https://newsapi.org/v1/sources?category=";
-    var GET_ICON = "https://icons.better-idea.org/icon?url=";
     var GET_STORIES = "https://newsapi.org/v1/articles?source=";
     var GET_RSSFEEDS = "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.feedburner.com%2FPuthiyathalaimurai_Districts_News";
     var RSSFEED_PT = "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.feedburner.com%2FPuthiyathalaimurai_Tamilnadu_News&api_key=3159ncurciuuew1nmfhqt5zap8r7nqisqzcx4yvt&order_by=pubDate&order_dir=desc&count=50"
-    var RSSFEED_IndiaNews_PT = " https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.feedburner.com%2FPuthiyathalaimurai_India_News%3Fformat%3Dxmlhttps%3A%2F%2Fnews.ycombinator.com%2Frss&api_key=3159ncurciuuew1nmfhqt5zap8r7nqisqzcx4yvt&order_by=pubDate&order_dir=asc&count=50";
+    var RSSFEED_IndiaNews_PT = "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.feedburner.com%2FPuthiyathalaimurai_India_News%3Fformat%3Dxmlhttps%3A%2F%2Fnews.ycombinator.com%2Frss&api_key=3159ncurciuuew1nmfhqt5zap8r7nqisqzcx4yvt&order_by=pubDate&order_dir=asc&count=50";
     var generatedValue = "10ad575c68f24879949f89147d38c9ce";
 
     appService.getNewsByCategory = function (category) {
@@ -43,6 +42,7 @@ app.factory('appService', ['$http', function ($http) {
             console.log('Error while fetching all sources');
         })
     };
+
 
     appService.getNewspapersByCategory = function (sourceId, sourceName) {
         var sourceId = sourceId;

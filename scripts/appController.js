@@ -74,7 +74,6 @@ app.controller('newsController', ['$scope', 'appService', function ($scope, appS
     })
   }
 
-
   /*
   * to get stories based on sourceId
   * parameters (sourceId, sortBy, sourceName)
