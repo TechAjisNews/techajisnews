@@ -3,7 +3,7 @@
  * @Author: Saleemah <Saleemahmh>
  * @Date:   2017-08-30T16:05:45+05:30
  * @Last modified by:   Mohammed Ismail
- * @Last modified time: 2017-09-08T17:48:49+05:30
+ * @Last modified time: 2017-09-14T17:48:49+05:30
  */
  var app = angular.module('myApp', ["ngRoute","angular-loading-bar"]);
  app.config(function($routeProvider) {

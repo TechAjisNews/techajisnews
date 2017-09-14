@@ -3,7 +3,7 @@
 * @Author: Saleemah <Saleemahmh>
 * @Date:   2017-08-30T16:05:45+05:30
  * @Last modified by:   Mohammed Ismail
- * @Last modified time: 2017-09-11T10:30:44+05:30
+ * @Last modified time: 2017-09-14T10:47:39+05:30
 */
 app.controller('newsController', ['$scope', 'appService', function ($scope, appService) {
 
@@ -36,11 +36,11 @@ app.controller('newsController', ['$scope', 'appService', function ($scope, appS
     for (var i = 0; i < topStoriesSource.length; i++) {
       appService.getNewspapers(topStoriesSource[i], 'top').then(function (data) {
         $scope.topStories.push(data);
-        console.log('getTopStories',data);
       }, function (error) {
         // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
       })
     }
+    console.log('topStories', $scope.topStories);
   };
 
   $scope.getTopStories();
@@ -53,11 +53,11 @@ app.controller('newsController', ['$scope', 'appService', function ($scope, appS
     for (var i = 0; i < latestSource.length; i++) {
       appService.getNewspapers(latestSource[i], 'latest').then(function (data) {
         $scope.latest.push(data);
-        console.log('getLatestStories', data);
       }, function (error) {
         // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
       })
     }
+    console.log('getLatestStories', $scope.latest);
   };
 
   $scope.getLatest();
@@ -73,7 +73,6 @@ app.controller('newsController', ['$scope', 'appService', function ($scope, appS
       // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
     })
   }
-
 
   /*
   * to get stories based on sourceId
@@ -111,19 +110,29 @@ app.controller('newsController', ['$scope', 'appService', function ($scope, appS
     })
   }
 
-
   /*
   * to get puthiyathalaimurai news feeds
   */
   $scope.getLocalRssFeeds = function () {
-    $scope.localNews = [];
+    $scope.districtNews = [];
     appService.getLocalRssFeeds().then(function (data) {
-      $scope.localNews = data;
+      $scope.districtNews = data;
+      console.log('RSS Feed', $scope.districtNews);
+      $scope.getIndianRss();
     }, function (errorResponse) {
       // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
     })
   }
 
+  $scope.getIndianRss = function () {
+    $scope.indianNews_rss = [];
+    appService.getRSSIndianNews().then(function (data) {
+      $scope.indianNews_rss = data;
+      console.log('RSS Feed', $scope.indianNews_rss);
+    }, function (errorResponse) {
+      // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
+    })
+  }
 
   /*
   *   Pagination, show more functionality
