@@ -3,7 +3,7 @@
 * @Author: Saleemah <Saleemahmh>
 * @Date:   2017-08-30T16:05:45+05:30
  * @Last modified by:   Mohammed Ismail
- * @Last modified time: 2017-09-13T10:47:39+05:30
+ * @Last modified time: 2017-09-14T10:47:39+05:30
 */
 app.controller('newsController', ['$scope', 'appService', function ($scope, appService) {
 
