@@ -28,6 +28,10 @@ h1 {
   padding: 10px;
 }
 
+.aside-nav .chevron .nav-pills li a{
+  text-align: inherit;
+}
+
 .aside-nav ul {
   background: none repeat scroll 0 0 #252D30;
 }
