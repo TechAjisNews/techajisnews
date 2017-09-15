@@ -20,6 +20,9 @@
    .when("/newspapers", {
      templateUrl : "view/allNewspaper.html"
    })
+   .when("/content", {
+     templateUrl : "view/contentPage.html"
+   })
    .when("/topstory", {
      templateUrl : "view/topstories.html"
    })

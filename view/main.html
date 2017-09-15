@@ -15,17 +15,18 @@
 
   <h3 class="text-center" style="color:#2962ff">Top DistrictNews Stories - Puthiyathalaimurai</h3><br/>
   <section>
-    <article class="line" ng-repeat="data in districtNews.items | limitTo: paginationCategoryLimit()">
+    <article class="line" ng-repeat="data in districtNews.items |limitTo:2">
       <div class="margin" ng-hide="!data.content_modified.body">
 
         <div class="s-12 m-12 l-4 hm-zoom">
-          <a ng-href="{{data.link}}" target="_blank">
+          <a ng-href="#!content" ng-click="getContent(data, districtNews.feed.link)">
             <img ng-src="{{data.content_modified.image_url}}"
             alt="..." class="brand-img-auto">
           </a>
         </div>
         <div class="s-12 m-12 l-8">
-          <a ng-href="{{data.link}}" target="_blank"><h4 class="channel-title">{{data.title}}</h4></a>
+          <img ng-src="https://icons.better-idea.org/icon?url={{data.url}}&size=70..120..200" alt="">
+          <a ng-href="#!content" ng-click="getContent(data, districtNews.feed.link)"><h4 class="channel-title">{{data.title}}</h4></a>
           <p>{{data.content_modified.body}}</p>
           <h6 class="s-12" style="text-align:right;color:blue;">{{data.pubDate|timeago}}</h6>
           <br /><br />
@@ -33,24 +34,26 @@
         </div>
       </div>
     </article>
-    <button class="button rounded-btn s-4 margin-bottom center" ng-show="hasMoreStoriesToShow()" ng-click="showMoreItems()">
+
+    <button class="button rounded-btn s-4 margin-bottom center" ng-click="showMoreItems()">
       View more
     </button>
+
   </section>
   <br>
   <h3 class="text-center" style="color:#2962ff">Top IndianNews Stories - Puthiyathalaimurai</h3><br/>
   <section>
-    <article class="line" ng-repeat="data in indianNews_rss.items | limitTo: paginationCategoryLimit()">
+    <article class="line" ng-repeat="data in indianNews_rss.items | limitTo:2">
       <div class="margin" ng-hide="!data.content_modified.body">
 
         <div class="s-12 m-12 l-4 hm-zoom">
-          <a ng-href="{{data.link}}" target="_blank">
+          <a ng-href="#!content" ng-click="getContent(data, indianNews_rss.feed.link)">
             <img ng-src="{{data.content_modified.image_url}}"
             alt="..." class="brand-img-auto">
           </a>
         </div>
         <div class="s-12 m-12 l-8">
-          <a ng-href="{{data.link}}" target="_blank"><h4 class="channel-title">{{data.title}}</h4></a>
+          <a ng-href="#!content" ng-click="getContent(data, indianNews_rss.feed.link)"><h4 class="channel-title">{{data.title}}</h4></a>
           <p>{{data.content_modified.body}}</p>
           <h6 class="s-12" style="text-align:right;color:blue;">{{data.pubDate|timeago}}</h6>
           <br /><br />

@@ -80,6 +80,7 @@ app.controller('newsController', ['$scope', 'appService', function ($scope, appS
   */
   $scope.getNewspapers = function (source, sortBy, sourceName) {
     $scope.sourceName = sourceName;
+    $scope.sourceId = source;
     appService.getNewspapers(source, sortBy).then(function (data) {
       $scope.sourceData = data;
     }, function (errorResponse) {
@@ -118,6 +119,7 @@ app.controller('newsController', ['$scope', 'appService', function ($scope, appS
     $scope.districtNews = [];
     appService.getLocalRssFeeds().then(function (data) {
       $scope.districtNews = data;
+      console.log('districtNews', $scope.districtNews);
       $scope.getIndianRss();
     }, function (errorResponse) {
       // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
@@ -133,6 +135,15 @@ app.controller('newsController', ['$scope', 'appService', function ($scope, appS
     }, function (errorResponse) {
       // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
     })
+  }
+
+
+  $scope.getContent = function(content, link){
+    console.log('content', content);
+    console.log('link', link);
+      $scope.feedContent = content;
+      $scope.feedContent['link'] = link;
+      console.log('feedContent', $scope.feedContent);
   }
 
   /*
