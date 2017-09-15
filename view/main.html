@@ -27,7 +27,7 @@
         <div class="s-12 m-12 l-8">
           <a ng-href="{{data.link}}" target="_blank"><h4 class="channel-title">{{data.title}}</h4></a>
           <p>{{data.content_modified.body}}</p>
-          <h6 class="s-12" style="text-align:right;color:blue;">{{data.pubDate}}</h6>
+          <h6 class="s-12" style="text-align:right;color:blue;">{{data.pubDate|timeago}}</h6>
           <br /><br />
           <hr>
         </div>
@@ -52,7 +52,7 @@
         <div class="s-12 m-12 l-8">
           <a ng-href="{{data.link}}" target="_blank"><h4 class="channel-title">{{data.title}}</h4></a>
           <p>{{data.content_modified.body}}</p>
-          <h6 class="s-12" style="text-align:right;color:blue;">{{data.pubDate}}</h6>
+          <h6 class="s-12" style="text-align:right;color:blue;">{{data.pubDate|timeago}}</h6>
           <br /><br />
           <hr>
         </div>

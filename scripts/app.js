@@ -5,7 +5,7 @@
  * @Last modified by:   Mohammed Ismail
  * @Last modified time: 2017-09-14T17:48:49+05:30
  */
- var app = angular.module('myApp', ["ngRoute","angular-loading-bar"]);
+ var app = angular.module('myApp', ["ngRoute","angular-loading-bar","ngtimeago"]);
  app.config(function($routeProvider) {
    $routeProvider
    .when("/", {
