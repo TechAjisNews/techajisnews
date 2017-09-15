@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-3853326597189402",
+      enable_page_level_ads: true
+    });
+  </script>
+</head>
+<body>
+
+  <h3 style="text-align:center; color:#2962ff">Top DistrictNews Stories - Puthiyathalaimurai</h3><br/>
+  <section>
+    <article class="line" ng-repeat="data in districtNews.items | limitTo: paginationCategoryLimit()">
+      <div class="margin" ng-hide="!data.content_modified.body">
+
+        <div class="s-12 m-12 l-4 hm-zoom">
+          <a ng-href="{{data.link}}" target="_blank">
+            <img ng-src="{{data.content_modified.image_url}}"
+            alt="..." class="brand-img-auto">
+          </a>
+        </div>
+        <div class="s-12 m-12 l-8">
+          <a ng-href="{{data.link}}" target="_blank"><h4 class="channel-title">{{data.title}}</h4></a>
+          <p>{{data.content_modified.body}}</p>
+          <h6 class="s-12" style="text-align:right;color:blue;">{{data.pubDate}}</h6>
+          <br /><br />
+          <hr>
+        </div>
+      </div>
+    </article>
+    <button class="button rounded-btn s-4 margin-bottom center" ng-show="hasMoreStoriesToShow()" ng-click="showMoreItems()">
+      View more
+    </button>
+  </section>
+  <br>
+  <h3 style="text-align:center; color:#2962ff">Top IndianNews Stories - Puthiyathalaimurai</h3><br/>
+  <section>
+    <article class="line" ng-repeat="data in indianNews_rss.items | limitTo: paginationCategoryLimit()">
+      <div class="margin" ng-hide="!data.content_modified.body">
+
+        <div class="s-12 m-12 l-4 hm-zoom">
+          <a ng-href="{{data.link}}" target="_blank">
+            <img ng-src="{{data.content_modified.image_url}}"
+            alt="..." class="brand-img-auto">
+          </a>
+        </div>
+        <div class="s-12 m-12 l-8">
+          <a ng-href="{{data.link}}" target="_blank"><h4 class="channel-title">{{data.title}}</h4></a>
+          <p>{{data.content_modified.body}}</p>
+          <h6 class="s-12" style="text-align:right;color:blue;">{{data.pubDate}}</h6>
+          <br /><br />
+          <hr>
+        </div>
+      </div>
+    </article>
+    <button class="button rounded-btn s-4 margin-bottom center" ng-show="hasMoreStoriesToShow()" ng-click="showMoreItems()">
+      View more
+    </button>
+  </section>
+
+</body>
+</html>

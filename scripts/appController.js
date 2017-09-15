@@ -18,10 +18,10 @@ app.controller('newsController', ['$scope', 'appService', function ($scope, appS
   'metro', 'mirror', 'mtv-news', 'newsweek', 'new-york-magazine', 'reuters', 'techcrunch', 'techradar',
   'the-next-web', 'the-telegraph', 'the-times-of-india'];
 
-  $scope.getNewsByCategory = function (category) {
+  $scope.getNewsByCategory = function (category,categoryName) {
+    $scope.categoryName_left_navbar = categoryName + " ";
     appService.getNewsByCategory(category).then(function (data) {
       $scope.sourceData = data;
-      console.log('getNewsByCategory', data);
     }, function (error) {
       // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
     })
@@ -92,8 +92,9 @@ app.controller('newsController', ['$scope', 'appService', function ($scope, appS
   * Getting all the sources by category wise and after that all the top stories
   * related to that sources.
   */
-  $scope.getTopStoriesByCategory = function (category) {
+  $scope.getTopStoriesByCategory = function (category, categoryName) {
     var sourcesByCategory = [];
+    $scope.categoryName = " "+categoryName;
     $scope.articlesBySource = [];
     appService.getNewsByCategory(category).then(function (data) {
       sourcesByCategory = data;
@@ -117,18 +118,18 @@ app.controller('newsController', ['$scope', 'appService', function ($scope, appS
     $scope.districtNews = [];
     appService.getLocalRssFeeds().then(function (data) {
       $scope.districtNews = data;
-      console.log('RSS Feed', $scope.districtNews);
       $scope.getIndianRss();
     }, function (errorResponse) {
       // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
     })
   }
 
+  $scope.getLocalRssFeeds();
+
   $scope.getIndianRss = function () {
     $scope.indianNews_rss = [];
     appService.getRSSIndianNews().then(function (data) {
       $scope.indianNews_rss = data;
-      console.log('RSS Feed', $scope.indianNews_rss);
     }, function (errorResponse) {
       // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
     })

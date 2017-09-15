@@ -9,10 +9,10 @@
  app.config(function($routeProvider) {
    $routeProvider
    .when("/", {
-     templateUrl : "view/mainPage.html"
+     templateUrl : "view/main.html"
    })
    .when("/home", {
-     templateUrl : "view/mainPage.html"
+     templateUrl : "view/main.html"
    })
    .when("/category", {
      templateUrl : "view/category.html"
@@ -23,14 +23,14 @@
    .when("/topstory", {
      templateUrl : "view/topstories.html"
    })
+   .when("/latestStory", {
+     templateUrl : "view/latestNews.html"
+   })
    .when("/topStoriesByCategory", {
      templateUrl : "view/topStoriesByCategory.html"
    })
    .when("/newsPage", {
      templateUrl : "view/newsPage.html"
-   })
-   .when("/rssFeed", {
-     templateUrl : "view/rssFeed.html"
    })
    .when("/contact", {
      templateUrl : "view/contact.html"
