@@ -13,7 +13,7 @@
 </head>
 <body>
 
-  <h3 style="text-align:center; color:#2962ff">Top DistrictNews Stories - Puthiyathalaimurai</h3><br/>
+  <h3 class="text-center" style="color:#2962ff">Top DistrictNews Stories - Puthiyathalaimurai</h3><br/>
   <section>
     <article class="line" ng-repeat="data in districtNews.items | limitTo: paginationCategoryLimit()">
       <div class="margin" ng-hide="!data.content_modified.body">
@@ -38,7 +38,7 @@
     </button>
   </section>
   <br>
-  <h3 style="text-align:center; color:#2962ff">Top IndianNews Stories - Puthiyathalaimurai</h3><br/>
+  <h3 class="text-center" style="color:#2962ff">Top IndianNews Stories - Puthiyathalaimurai</h3><br/>
   <section>
     <article class="line" ng-repeat="data in indianNews_rss.items | limitTo: paginationCategoryLimit()">
       <div class="margin" ng-hide="!data.content_modified.body">

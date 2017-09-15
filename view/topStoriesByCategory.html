@@ -13,7 +13,7 @@
 </head>
 <body>
 
-  <h3 style="text-align:center; color:#2962ff">Top <b>{{categoryName}}</b> stories</h3><br/>
+  <h3 class="text-center" style="color:#2962ff">Top <b>{{categoryName}}</b> stories</h3><br/>
   <section>
     <article class="line" ng-repeat="stories in articlesBySource | limitTo : paginationLimit()">
       <div ng-repeat="data in stories ">
