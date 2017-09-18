@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TechAjis-News Portal</title>
-  <link rel="stylesheet" type="text/css" href="css/mdb.min.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/icons.css">
   <link rel="stylesheet" href="css/responsee.css">
   <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
   <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+  <link rel="stylesheet" type="text/css" href="css/mdb.min.css">
   <link rel='stylesheet' href="http://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css" type='text/css' media='all' />
   <!--  custom styles -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -20,8 +20,27 @@
 
   <script src="js/jquery-3.1.1.min.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-3853326597189402",
+      enable_page_level_ads: true
+    });
+  </script>
+
 </head>
 <body class="" ng-controller="newsController" >
+
+  <style>
+    #gotToTop{
+      display: none;
+      position: fixed;
+      bottom : 20px;
+      right: 30px;
+
+    }
+  </style>
 
   <!-- Loading-Bar -->
   <div id="loading-bar-container"></div>
@@ -35,7 +54,8 @@
         <div class="top-nav">
           <ul>
             <li><a href="#!home" ng-click="getLatest()">Home</a></li>
-            <li><a href="#!topstory" ng-click="getTopStories()">Top Stories</a></li>
+            <li><a href="#!topstory" ng-click="getTopStories()">Top News</a></li>
+            <li><a href="#!latestStory" >Latest News</a></li>
             <li><a href="#!contact">Contact</a></li>
           </ul>
         </div>
@@ -54,17 +74,58 @@
       <div class="s-12 m-8 l-9">
         <div class="box">
           <!-- HEADER -->
+          <!-- CAROUSEL -->
+          <div class="line">
+            <div id="owl-demo3" class="owl-carousel margin-bottom">
+              <div class="item" style="padding:5px"><a href="#!topstory" ng-click="getTopStories()">
+                <img ng-src="http://placehold.it/300x70/3f51b5/fff?text=World" alt=""></a>
+              </div>
+              <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
+                ng-click="getTopStoriesByCategory('business', 'Business')">
+                <img ng-src="http://placehold.it/300x70/673ab7/fff?text=Business" alt=""></a>
+              </div>
+              <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
+                ng-click="getTopStoriesByCategory('entertainment', 'Entertainment')">
+                <img ng-src="http://placehold.it/300x70/db4437/fff?text=Entertainment" alt=""></a>
+              </div>
+              <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
+                ng-click="getTopStoriesByCategory('gaming', 'Gaming')">
+                <img ng-src="http://placehold.it/300x70/9c27b0/fff?text=Gaming" alt=""></a>
+              </div>
+              <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
+                ng-click="getTopStoriesByCategory('music', 'Music')">
+                <img ng-src="http://placehold.it/300x70/E36132/fff?text=Music" alt=""></a>
+              </div>
+              <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
+                ng-click="getTopStoriesByCategory('politics', 'Politics')">
+                <img ng-src="http://placehold.it/300x70/e91e63/fff?text=Politics" alt=""></a>
+              </div>
+              <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
+                ng-click="getTopStoriesByCategory('science-and-nature', 'Science')">
+                <img ng-src="http://placehold.it/300x70/673ab7/fff?text=Science" alt=""></a>
+              </div>
+              <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
+                ng-click="getTopStoriesByCategory('sport', 'Sports')">
+                <img ng-src="http://placehold.it/300x70/009688/fff?text=Sports" alt=""></a>
+              </div>
+              <div class="item" style="padding:5px"><a href="#!topStoriesByCategory"
+                ng-click="getTopStoriesByCategory('technology', 'Technology')">
+                <img ng-src="http://placehold.it/300x70/db4437/fff?text=Technology" alt=""></a>
+              </div>
+            </div>
+          </div>
 
           <div ng-view></div>
 
         </div>
+        <button type="button" id="gotToTop" class="btn btn-danger btn-circle btn-xl"
+        onclick="topFunction()" title="Go to top"><i class="fa fa-chevron-circle-up"></i></button>
         <!-- FOOTER -->
         <div class="" ng-include="'view/footer.html'"></div>
       </div>
 
     </div>
   </div>
-
 
   <!-- Scripts -->
   <script src="js/tether.min.js" charset="utf-8"></script>
@@ -76,12 +137,42 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/x2js/1.2.0/xml2json.min.js" charset="utf-8"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js" charset="utf-8"></script>
+  <script src="js/timeAgo.min.js" charset="utf-8"></script>
   <!-- AngularScripts -->
   <script src="scripts/app.js" charset="utf-8"></script>
   <script src="scripts/appController.min.js" charset="utf-8"></script>
   <script src="scripts/appService.min.js" charset="utf-8"></script>
   <!-- /AngularScripts -->
+
+
+  <script type="text/javascript">
+  jQuery(document).ready(function($) {
+    $("#owl-demo3").owlCarousel({
+      items : 4,
+      lazyLoad : true,
+      autoPlay : true,
+      navigation : false,
+      pagination : false
+    });
+  });
+
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById("gotToTop").style.display = "block";
+    } else {
+      document.getElementById("gotToTop").style.display = "none";
+    }
+  }
+
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0; // For Chrome, Safari and Opera
+    document.documentElement.scrollTop = 0; // For IE and Firefox
+  }
+  </script>
 
 </body>
 </html>

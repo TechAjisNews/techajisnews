@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-3853326597189402",
+                enable_page_level_ads: true
+            });
+        </script>
+    </head>
+    <body>
+        <h3 class="text-center" style="color:#2962ff">Top {{contentHead}} Stories - Puthiyathalaimurai</h3><br/>
+        <section>
+            <article class="line" ng-repeat="data in contentList.items |limitTo: showMoreItems()">
+                <div class="margin" ng-hide="!data.content_modified.body">
+
+                    <div class="s-12 m-12 l-4 hm-zoom">
+                        <a ng-href="#!content" ng-click="getContent(data, contentList.feed.link)">
+                            <img ng-src="{{data.content_modified.image_url}}"
+                                 alt="..." class="brand-img-auto">
+                        </a>
+                    </div>
+                    <div class="s-12 m-12 l-8">
+                        <img ng-src="https://icons.better-idea.org/icon?url={{data.url}}&size=70..120..200" alt="">
+                        <a ng-href="#!content" ng-click="getContent(data, contentList.feed.link)"><h4 class="channel-title">{{data.title}}</h4></a>
+                        <p style="margin-bottom: auto">{{data.content_modified.body}}</p>
+                        <h6 class="s-12" style="text-align:right;color:blue;">{{data.pubDate|timeago}}</h6>
+                        <br /><br />
+                        <hr>
+                    </div>
+                </div>
+            </article>
+            <button class="button rounded-btn s-4 margin-bottom center"
+            ng-show="hasMoreStoriesToShow()" ng-click="showMoreItems()">
+                View more
+            </button>
+        </section>
+    </body>
+</html>

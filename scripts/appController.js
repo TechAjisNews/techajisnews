@@ -18,10 +18,10 @@ app.controller('newsController', ['$scope', 'appService', function ($scope, appS
   'metro', 'mirror', 'mtv-news', 'newsweek', 'new-york-magazine', 'reuters', 'techcrunch', 'techradar',
   'the-next-web', 'the-telegraph', 'the-times-of-india'];
 
-  $scope.getNewsByCategory = function (category) {
+  $scope.getNewsByCategory = function (category,categoryName) {
+    $scope.categoryName_left_navbar = categoryName + " ";
     appService.getNewsByCategory(category).then(function (data) {
       $scope.sourceData = data;
-      console.log('getNewsByCategory', data);
     }, function (error) {
       // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
     })
@@ -80,6 +80,7 @@ app.controller('newsController', ['$scope', 'appService', function ($scope, appS
   */
   $scope.getNewspapers = function (source, sortBy, sourceName) {
     $scope.sourceName = sourceName;
+    $scope.sourceId = source;
     appService.getNewspapers(source, sortBy).then(function (data) {
       $scope.sourceData = data;
     }, function (errorResponse) {
@@ -92,8 +93,9 @@ app.controller('newsController', ['$scope', 'appService', function ($scope, appS
   * Getting all the sources by category wise and after that all the top stories
   * related to that sources.
   */
-  $scope.getTopStoriesByCategory = function (category) {
+  $scope.getTopStoriesByCategory = function (category, categoryName) {
     var sourcesByCategory = [];
+    $scope.categoryName = " "+categoryName;
     $scope.articlesBySource = [];
     appService.getNewsByCategory(category).then(function (data) {
       sourcesByCategory = data;
@@ -117,21 +119,48 @@ app.controller('newsController', ['$scope', 'appService', function ($scope, appS
     $scope.districtNews = [];
     appService.getLocalRssFeeds().then(function (data) {
       $scope.districtNews = data;
-      console.log('RSS Feed', $scope.districtNews);
+      console.log('districtNews', $scope.districtNews);
       $scope.getIndianRss();
     }, function (errorResponse) {
       // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
     })
   }
 
+  $scope.getLocalRssFeeds();
+
   $scope.getIndianRss = function () {
     $scope.indianNews_rss = [];
     appService.getRSSIndianNews().then(function (data) {
       $scope.indianNews_rss = data;
-      console.log('RSS Feed', $scope.indianNews_rss);
+      $scope.getWorldRss();
     }, function (errorResponse) {
       // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
     })
+  }
+
+  $scope.getWorldRss = function () {
+    $scope.worldNews_rss = [];
+    appService.getRSSWorldNews().then(function (data) {
+      $scope.worldNews_rss = data;
+    }, function (errorResponse) {
+      // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
+    })
+  }
+
+
+  $scope.getContent = function(content, link){
+    console.log('content', content);
+    console.log('link', link);
+      $scope.feedContent = content;
+      $scope.feedContent['link'] = link;
+      console.log('feedContent', $scope.feedContent);
+  }
+
+  $scope.showMoreContent= function(data, contentHeading){
+
+    $scope.contentHead = contentHeading;
+    $scope.contentList = data;
+    console.log('Data & heading', $scope.contentList);
   }
 
   /*
