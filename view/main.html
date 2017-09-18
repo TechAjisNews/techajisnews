@@ -5,10 +5,10 @@
   <title></title>
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "ca-pub-3853326597189402",
-      enable_page_level_ads: true
-    });
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-3853326597189402",
+    enable_page_level_ads: true
+  });
   </script>
 </head>
 <body>
@@ -27,7 +27,7 @@
         <div class="s-12 m-12 l-8">
           <img ng-src="https://icons.better-idea.org/icon?url={{data.url}}&size=70..120..200" alt="">
           <a ng-href="#!content" ng-click="getContent(data, districtNews.feed.link)"><h4 class="channel-title">{{data.title}}</h4></a>
-          <p>{{data.content_modified.body}}</p>
+          <p style="margin-bottom: auto">{{data.content_modified.body}}</p>
           <h6 class="s-12" style="text-align:right;color:blue;">{{data.pubDate|timeago}}</h6>
           <br /><br />
           <hr>
@@ -35,36 +35,69 @@
       </div>
     </article>
 
-    <button class="button rounded-btn s-4 margin-bottom center" ng-click="showMoreItems()">
+    <div class="" style="text-align:center">
+      <a class="button rounded-btn s-4 margin-bottom center" ng-href="#!showMoreContent"
+      ng-click="showMoreContent(districtNews, 'DistrictNews')">
       View more
-    </button>
+    </a>
+  </div>
 
-  </section>
-  <br>
-  <h3 class="text-center" style="color:#2962ff">Top IndianNews Stories - Puthiyathalaimurai</h3><br/>
-  <section>
-    <article class="line" ng-repeat="data in indianNews_rss.items | limitTo:2">
-      <div class="margin" ng-hide="!data.content_modified.body">
+</section>
+<br>
+<h3 class="text-center" style="color:#2962ff">Top IndianNews Stories - Puthiyathalaimurai</h3><br/>
+<section>
+  <article class="line" ng-repeat="data in indianNews_rss.items | limitTo:2">
+    <div class="margin" ng-hide="!data.content_modified.body">
 
-        <div class="s-12 m-12 l-4 hm-zoom">
-          <a ng-href="#!content" ng-click="getContent(data, indianNews_rss.feed.link)">
-            <img ng-src="{{data.content_modified.image_url}}"
-            alt="..." class="brand-img-auto">
-          </a>
-        </div>
-        <div class="s-12 m-12 l-8">
-          <a ng-href="#!content" ng-click="getContent(data, indianNews_rss.feed.link)"><h4 class="channel-title">{{data.title}}</h4></a>
-          <p>{{data.content_modified.body}}</p>
-          <h6 class="s-12" style="text-align:right;color:blue;">{{data.pubDate|timeago}}</h6>
-          <br /><br />
-          <hr>
-        </div>
+      <div class="s-12 m-12 l-4 hm-zoom">
+        <a ng-href="#!content" ng-click="getContent(data, indianNews_rss.feed.link)">
+          <img ng-src="{{data.content_modified.image_url}}"
+          alt="..." class="brand-img-auto">
+        </a>
       </div>
-    </article>
-    <button class="button rounded-btn s-4 margin-bottom center" ng-show="hasMoreStoriesToShow()" ng-click="showMoreItems()">
+      <div class="s-12 m-12 l-8">
+        <a ng-href="#!content" ng-click="getContent(data, indianNews_rss.feed.link)"><h4 class="channel-title">{{data.title}}</h4></a>
+        <p style="margin-bottom: 35px">{{data.content_modified.body}}</p>
+        <h6 class="s-12" style="text-align:right;color:blue;">{{data.pubDate|timeago}}</h6>
+        <br /><br />
+        <hr>
+      </div>
+    </div>
+  </article>
+  <div class="" style="text-align:center">
+    <a class="button rounded-btn s-4 margin-bottom center" ng-href="#!showMoreContent"  ng-click="showMoreContent(indianNews_rss, 'IndianNews')">
       View more
-    </button>
-  </section>
+    </a>
+  </div>
+</section>
+
+<br>
+<h3 class="text-center" style="color:#2962ff">Top WorldNews Stories - Puthiyathalaimurai</h3><br/>
+<section>
+  <article class="line" ng-repeat="data in worldNews_rss.items | limitTo:2">
+    <div class="margin" ng-hide="!data.content_modified.body">
+
+      <div class="s-12 m-12 l-4 hm-zoom">
+        <a ng-href="#!content" ng-click="getContent(data, worldNews_rss.feed.link)">
+          <img ng-src="{{data.content_modified.image_url}}"
+          alt="..." class="brand-img-auto">
+        </a>
+      </div>
+      <div class="s-12 m-12 l-8">
+        <a ng-href="#!content" ng-click="getContent(data, worldNews_rss.feed.link)"><h4 class="channel-title">{{data.title}}</h4></a>
+        <p style="margin-bottom: 35px">{{data.content_modified.body}}</p>
+        <h6 class="s-12" style="text-align:right;color:blue;">{{data.pubDate|timeago}}</h6>
+        <br /><br />
+        <hr>
+      </div>
+    </div>
+  </article>
+  <div class="" style="text-align:center">
+    <a class="button rounded-btn s-4 margin-bottom center" ng-href="#!showMoreContent"  ng-click="showMoreContent(worldNews_rss, 'WorldNews')">
+      View more
+    </a>
+  </div>
+</section>
 
 </body>
 </html>

@@ -132,6 +132,16 @@ app.controller('newsController', ['$scope', 'appService', function ($scope, appS
     $scope.indianNews_rss = [];
     appService.getRSSIndianNews().then(function (data) {
       $scope.indianNews_rss = data;
+      $scope.getWorldRss();
+    }, function (errorResponse) {
+      // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
+    })
+  }
+
+  $scope.getWorldRss = function () {
+    $scope.worldNews_rss = [];
+    appService.getRSSWorldNews().then(function (data) {
+      $scope.worldNews_rss = data;
     }, function (errorResponse) {
       // $.toaster({ priority : 'error', title : 'Error', message : 'error while fetching resources'});
     })
@@ -144,6 +154,13 @@ app.controller('newsController', ['$scope', 'appService', function ($scope, appS
       $scope.feedContent = content;
       $scope.feedContent['link'] = link;
       console.log('feedContent', $scope.feedContent);
+  }
+
+  $scope.showMoreContent= function(data, contentHeading){
+
+    $scope.contentHead = contentHeading;
+    $scope.contentList = data;
+    console.log('Data & heading', $scope.contentList);
   }
 
   /*

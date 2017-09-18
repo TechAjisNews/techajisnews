@@ -1,58 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-3853326597189402",
-    enable_page_level_ads: true
-  });
-  </script>
-  <style>
-  .tab{
-    padding: 10px;
-    background-color: #152732;
-    color: white;
-  }
-  </style>
-</head>
-<body>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-3853326597189402",
+                enable_page_level_ads: true
+            });
+        </script>
+        <style>
+            .tab{
+                padding: 10px;
+                background-color: #152732;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
 
-  <h3 class="channel-title text-center" style="color:#2962ff">{{sourceName}}</h3><br/>
-  <div class="line" style="padding-bottom:20px">
-    <div class="margin">
-      <div class="s-12 m-12 l-4 text-center ">
-          <a ng-href="">
-            <p class="tab">Top News from {{sourceName}}</p>
-          </a>
-      </div>
-    </div>
-  </div>
-</div>
+        <h3 class="channel-title text-center" style="color:#2962ff">{{sourceName}}</h3><br/>
+        <div class="line" style="padding-bottom:20px">
+            <div class="margin">
+                <div class="s-12 m-12 l-4 text-center ">
+                    <a ng-href="">
+                        <p class="tab">Top News from {{sourceName}}</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
 
-<section>
-  <article class="line" ng-repeat="data in sourceData">
-    <div class="margin">
+    
+    <section>
+        <article class="line" ng-repeat="data in sourceData">
+            <div class="margin">
 
-      <div class="s-12 m-12 l-4 hm-zoom">
-        <a ng-href="{{data.urlToImage}}" target="_blank">
-          <img ng-src="{{data.urlToImage}}"
-          alt="..." class="brand-img-auto">
-        </a>
-      </div>
-      <div class="s-12 m-12 l-8">
-        <a ng-href="{{data.url}}" target="_blank"><h4 class="channel-title">{{data.title}}</h4></a>
-        <p>{{data.description}}</p>
-        <h6 class="s-8"><span style="color:red">{{data.author}}</span></h6>
-        <h6 class="s-4" style="text-align:right;color:blue;">{{data.publishedAt|timeago}}</h6>
-        <br /><br /> <br/>
-        <hr>
-      </div>
-    </div>
-  </article>
-</section>
+                <div class="s-12 m-12 l-4 hm-zoom">
+                    <a ng-href="{{data.urlToImage}}" target="_blank">
+                        <img ng-src="{{data.urlToImage}}"
+                             alt="..." class="brand-img-auto">
+                    </a>
+                </div>
+                <div class="s-12 m-12 l-8">
+                    <a ng-href="{{data.url}}" target="_blank"><h4 class="channel-title">{{data.title}}</h4></a>
+                    <p style="margin-bottom: 35px">{{data.description}}</p>
+                    <h6 class="s-8"><span style="color:red">{{data.author}}</span></h6>
+                    <h6 class="s-4" style="text-align:right;color:blue;">{{data.publishedAt|timeago}}</h6>
+                    <br /><br /> <br/>
+                    <hr>
+                </div>
+            </div>
+        </article>
+    </section>
 
-</body>
+    </body>
 </html>

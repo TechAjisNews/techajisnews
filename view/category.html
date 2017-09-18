@@ -1,27 +1,27 @@
 
 <h3 class="channel-title text-center" style="color:#2962ff"><b>{{categoryName_left_navbar}}</b> category</h3><br/>
 <section>
-  <article class="line" ng-repeat="data in sourceData | limitTo: paginationCategoryLimit()">
-    <div class="margin">
-      <div class="s-12 m-12 l-2 hm-zoom">
-        <a ng-href="#!newsPage" ng-click="getNewspapers(data.id, 'top', data.name)">
-          <img
-          ng-src="https://icons.better-idea.org/icon?url={{data.url}}&size=70..120..200"
-          alt="..." class="brand-img">
-        </a>
-      </div>
-      <div class="s-12 m-12 l-10">
-        <a ng-href="#!newsPage" ng-click="getNewspapers(data.id, 'top', data.name)">
-          <h4 class="channel-title">{{data.name}}</h4>
-        </a>
-        <p>{{data.description}}</p>
-        <br />
-        <hr>
-      </div>
-    </div>
-  </article>
-  <button class="button rounded-btn s-4 margin-bottom center" ng-show="hasMoreCategoryToShow()"
-  ng-click="showMoreItems()">
-View more
-</button>
+    <article class="line" ng-repeat="data in sourceData | limitTo: paginationCategoryLimit()">
+        <div class="margin">
+            <div class="s-12 m-12 l-2 hm-zoom">
+                <a ng-href="#!newsPage" ng-click="getNewspapers(data.id, 'top', data.name)">
+                    <img
+                         ng-src="https://icons.better-idea.org/icon?url={{data.url}}&size=70..120..200"
+                         alt="..." class="brand-img">
+                </a>
+            </div>
+            <div class="s-12 m-12 l-10">
+                <a ng-href="#!newsPage" ng-click="getNewspapers(data.id, 'top', data.name)">
+                    <h4 class="channel-title">{{data.name}}</h4>
+                </a>
+                <p>{{data.description}}</p>
+                <br />
+                <hr>
+            </div>
+        </div>
+    </article>
+    <button class="button rounded-btn s-4 margin-bottom center" ng-show="hasMoreCategoryToShow()"
+            ng-click="showMoreItems()">
+        View more
+    </button>
 </section>

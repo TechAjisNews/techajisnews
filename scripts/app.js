@@ -23,6 +23,9 @@
    .when("/content", {
      templateUrl : "view/contentPage.html"
    })
+   .when("/showMoreContent", {
+     templateUrl : "view/mainPageList.html"
+   })
    .when("/topstory", {
      templateUrl : "view/topstories.html"
    })
