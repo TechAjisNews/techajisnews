@@ -167,7 +167,8 @@ app.controller('newsController', ['$scope', 'appService', function ($scope, appS
   *   Pagination, show more functionality
   */
 
-  var pagesShown = 1;
+
+ var pagesShown = 1;
 
   var pageSize = 1;
 
